@@ -105,6 +105,7 @@ let user = "tharakadesilva"; in
         AppleShowAllExtensions = true;
         AppleShowAllFiles = true;
         FXPreferredViewStyle = "clmv";
+        FXRemoveOldTrashItems = true;
       };
 
       loginwindow.GuestEnabled = false;
@@ -113,6 +114,8 @@ let user = "tharakadesilva"; in
         Clicking = true;
         TrackpadThreeFingerDrag = true;
       };
+
+      SoftwareUpdate.AutomaticallyInstallMacOSUpdates = true;
     };
 
     activationScripts.extraActivation.text = ''
