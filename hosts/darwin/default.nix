@@ -57,19 +57,19 @@ let user = "tharakadesilva"; in
 
     defaults = {
       NSGlobalDomain = {
-        AppleInterfaceStyle = "Dark";
-        AppleICUForce24HourTime = true;
-        ApplePressAndHoldEnabled = true;
-        AppleShowAllExtensions = true;
-
-         # 120, 90, 60, 30, 12, 6, 2
-        KeyRepeat = 2;
-
-        # 120, 94, 68, 35, 25, 15
-        InitialKeyRepeat = 15;
-
         "com.apple.keyboard.fnState" = true;
         "com.apple.mouse.tapBehavior" = 1;
+
+        AppleICUForce24HourTime = true;
+        AppleInterfaceStyle = "Dark";
+        ApplePressAndHoldEnabled = true;
+        AppleShowAllExtensions = true;
+        AppleShowAllFiles = true;
+        # 120, 94, 68, 35, 25, 15
+        InitialKeyRepeat = 15;
+         # 120, 90, 60, 30, 12, 6, 2
+        KeyRepeat = 2;
+        NSAutomaticCapitalizationEnabled = false;
       };
 
       controlcenter.BatteryShowPercentage = true;
@@ -101,10 +101,14 @@ let user = "tharakadesilva"; in
         ShowPathbar = true;
       };
 
-      loginwindow.GuestEnabled = false;
+      loginwindow = {
+        DisableConsoleAccess = true;
+        GuestEnabled = false;
+      };
 
       trackpad = {
         Clicking = true;
+        Dragging = true;
         TrackpadThreeFingerDrag = true;
       };
 
