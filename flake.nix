@@ -1,5 +1,5 @@
 {
-  description = "Starter Configuration with secrets for MacOS and NixOS";
+  description = "Raka's NixOS Configuration";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     agenix.url = "github:ryantm/agenix";
@@ -7,6 +7,9 @@
     darwin = {
       url = "github:LnL7/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    mac-app-util = {
+      url = "github:hraban/mac-app-util";
     };
     nix-homebrew = {
       url = "github:zhaofengli-wip/nix-homebrew";
@@ -32,7 +35,7 @@
       flake = false;
     };
   };
-  outputs = { self, darwin, nix-homebrew, homebrew-bundle, homebrew-core, homebrew-cask, home-manager, nixpkgs, disko, agenix, secrets } @inputs:
+  outputs = { self, darwin, mac-app-util, nix-homebrew, homebrew-bundle, homebrew-core, homebrew-cask, home-manager, nixpkgs, disko, agenix, secrets } @inputs:
     let
       user = "tharakadesilva";
       linuxSystems = [ "x86_64-linux" "aarch64-linux" ];
@@ -83,7 +86,16 @@
           inherit system;
           specialArgs = inputs;
           modules = [
+            mac-app-util.darwinModules.default
             home-manager.darwinModules.home-manager
+            (
+              { ... }:
+              {
+                home-manager.sharedModules = [
+                  mac-app-util.homeManagerModules.default
+                ];
+              }
+            )
             nix-homebrew.darwinModules.nix-homebrew
             {
               nix-homebrew = {
