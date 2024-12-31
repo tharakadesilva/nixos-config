@@ -2,6 +2,7 @@
 
 let
   user = "tharakadesilva";
+  sharedFiles = import ../shared/files.nix { inherit config pkgs; };
 in
 {
   # It me
@@ -43,7 +44,9 @@ in
       home = {
         enableNixpkgsReleaseCheck = false;
         packages = pkgs.callPackage ./packages.nix {};
-        file = lib.mkMerge [];
+        file = lib.mkMerge [
+          sharedFiles
+        ];
 
         stateVersion = "23.11";
       };
