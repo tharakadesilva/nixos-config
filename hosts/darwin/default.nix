@@ -98,6 +98,7 @@ let user = "tharakadesilva"; in
         AppleShowAllFiles = true;
         FXPreferredViewStyle = "clmv";
         FXRemoveOldTrashItems = true;
+        ShowPathbar = true;
       };
 
       loginwindow.GuestEnabled = false;
