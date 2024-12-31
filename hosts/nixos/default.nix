@@ -39,7 +39,9 @@ let user = "tharakadesilva";
   };
 
   nix = {
+    package = pkgs.nix;
     nixPath = [ "nixos-config=/home/${user}/.local/share/src/nixos-config:/etc/nixos" ];
+
     settings = {
       allowed-users = [ "${user}" ];
       trusted-users = [ "@admin" "${user}" ];
@@ -47,9 +49,21 @@ let user = "tharakadesilva";
       trusted-public-keys = [ "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=" ];
     };
 
-    package = pkgs.nix;
+    gc = {
+      user = "root";
+      automatic = true;
+      interval = { Weekday = 0; Hour = 2; Minute = 0; };
+      options = "--delete-older-than 7d";
+    };
+    
+    optimise = {
+      automatic = true;
+    };
+
     extraOptions = ''
       experimental-features = nix-command flakes
+      keep-outputs = true
+      keep-derivations = true
     '';
   };
 
