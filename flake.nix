@@ -30,10 +30,10 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # secrets = {
-    #   url = "git+ssh://git@github.com/tharakadesilva/nixos-secrets.git";
-    #   flake = false;
-    # };
+    secrets = {
+      url = "git+ssh://git@github.com/tharakadesilva/nixos-secrets.git";
+      flake = false;
+    };
   };
   outputs = {
     self,
@@ -47,7 +47,7 @@
     nixpkgs,
     disko,
     agenix,
-    # secrets
+    secrets
   } @inputs:
     let
       user = "tharakadesilva";
