@@ -3,7 +3,6 @@
 let user = "tharakadesilva"; in
 
 {
-
   imports = [
     ../../modules/darwin/secrets.nix
     ../../modules/darwin/home-manager.nix
@@ -60,7 +59,7 @@ let user = "tharakadesilva"; in
       NSGlobalDomain = {
         AppleInterfaceStyle = "Dark";
         AppleICUForce24HourTime = true;
-        ApplePressAndHoldEnabled = false;
+        ApplePressAndHoldEnabled = true;
         AppleShowAllExtensions = true;
 
          # 120, 90, 60, 30, 12, 6, 2
@@ -80,11 +79,17 @@ let user = "tharakadesilva"; in
         mru-spaces = false;
         show-recents = false;
         persistent-apps = [
-          "/Applications/1Password.app"
+          "/System/Applications/FaceTime.app"
+          "/System/Applications/Messages.app"
+          "/Applications/WhatsApp.app"
+          "/Applications/Slack.app"
           "/Applications/Google Chrome.app"
           "/Applications/Cursor.app"
           "/Applications/Warp.app"
-          "/Applications/WhatsApp.app"
+          "/Applications/1Password.app"
+        ];
+        persistent-others = [
+          "${config.users.users.${user}.home}/Downloads"
         ];
       };
 
