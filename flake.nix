@@ -91,9 +91,9 @@
             (
               { ... }:
               {
-                home-manager.sharedModules = [
-                  mac-app-util.homeManagerModules.default
-                ];
+                home-manager.users.${user}.imports = [
+                mac-app-util.homeManagerModules.default
+              ];
               }
             )
             nix-homebrew.darwinModules.nix-homebrew
