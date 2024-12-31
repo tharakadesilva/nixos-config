@@ -102,5 +102,9 @@ let user = "tharakadesilva"; in
         TrackpadThreeFingerDrag = true;
       };
     };
+
+    activationScripts.extraActivation.text = ''
+      softwareupdate --install-rosetta --agree-to-license
+    '';
   };
 }
