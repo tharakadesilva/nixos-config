@@ -11,10 +11,6 @@ let
   additionalFiles = import ./files.nix { inherit user config pkgs; };
 in
 {
-  imports = [
-   ./dock
-  ];
-
   # It me
   users.users.${user} = {
     name = "${user}";
