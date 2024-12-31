@@ -71,31 +71,43 @@ let user = "tharakadesilva"; in
 
     defaults = {
       NSGlobalDomain = {
-        AppleShowAllExtensions = true;
+        AppleInterfaceStyle = "Dark";
+        AppleICUForce24HourTime = true;
         ApplePressAndHoldEnabled = false;
+        AppleShowAllExtensions = true;
 
-        # 120, 90, 60, 30, 12, 6, 2
+         # 120, 90, 60, 30, 12, 6, 2
         KeyRepeat = 2;
 
         # 120, 94, 68, 35, 25, 15
         InitialKeyRepeat = 15;
 
+        "com.apple.keyboard.fnState" = true;
         "com.apple.mouse.tapBehavior" = 1;
-        "com.apple.sound.beep.volume" = 0.0;
-        "com.apple.sound.beep.feedback" = 0;
       };
 
+      controlcenter.BatteryShowPercentage = true;
+
       dock = {
-        autohide = false;
+        autohide = true;
+        mru-spaces = false;
         show-recents = false;
-        launchanim = true;
-        orientation = "bottom";
-        tilesize = 48;
+        persistent-apps = [
+          "/Applications/1Password.app"
+          "/Applications/Google Chrome.app"
+          "/Applications/Cursor.app"
+          "/Applications/Warp.app"
+          "/Applications/WhatsApp.app"
+        ];
       };
 
       finder = {
-        _FXShowPosixPathInTitle = false;
+        AppleShowAllExtensions = true;
+        AppleShowAllFiles = true;
+        FXPreferredViewStyle = "clmv";
       };
+
+      loginwindow.GuestEnabled = false;
 
       trackpad = {
         Clicking = true;
@@ -107,4 +119,6 @@ let user = "tharakadesilva"; in
       softwareupdate --install-rosetta --agree-to-license
     '';
   };
+
+  security.pam.enableSudoTouchIdAuth = true;
 }
