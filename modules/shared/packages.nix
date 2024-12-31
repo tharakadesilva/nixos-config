@@ -3,6 +3,7 @@
 with pkgs; [
   # General packages for development and system management
   bat
+  bazel-watcher
   bazelisk
   bottom
   buildifier
@@ -19,11 +20,10 @@ with pkgs; [
   git-lfs
   gnupg
   go
-  ibazel
   jq
   maven
   neovim
-  node
+  nodejs_22
   nodePackages.eas-cli
   nodePackages.npm
   openjdk
@@ -33,7 +33,7 @@ with pkgs; [
   ripgrep
   rm-improved
   rsync
-  supabase
+  supabase-cli
   thefuck
   tmux
   zoxide
