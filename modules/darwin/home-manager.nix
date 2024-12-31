@@ -26,7 +26,9 @@ in
   homebrew = {
     enable = true;
     casks = pkgs.callPackage ./casks.nix {};
-    # onActivation.cleanup = "uninstall";
+    onActivation.autoUpdate = true;
+    onActivation.upgrade = true;
+    onActivation.cleanup = "zap";
 
     # These app IDs are from using the mas CLI app
     # mas = mac app store
@@ -40,8 +42,8 @@ in
     # This message is safe to ignore. (https://github.com/dustinlyons/nixos-config/issues/83)
 
     masApps = {
-      "1password" = 1333542190;
-      "wireguard" = 1451685025;
+      "Magnet" = 441258766;
+      "Xcode" = 497799835;
     };
   };
 
