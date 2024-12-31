@@ -2,24 +2,21 @@ _:
 
 [
   # Development Tools
-  "homebrew/cask/docker"
+  "cursor"
+  "docker"
   "visual-studio-code"
+  "warp"
 
   # Communication Tools
   "discord"
-  "notion"
   "slack"
-  "telegram"
-  "zoom"
+  "whatsapp"
 
   # Utility Tools
-  "syncthing"
+  "1password"
 
   # Entertainment Tools
   "vlc"
-
-  # Productivity Tools
-  "raycast"
 
   # Browsers
   "google-chrome"
