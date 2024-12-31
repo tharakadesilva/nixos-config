@@ -62,6 +62,10 @@ let user = "tharakadesilva"; in
     StandardOutPath = "/tmp/emacs.out.log";
   };
 
+  fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+  ];
+
   system = {
     stateVersion = 4;
 
