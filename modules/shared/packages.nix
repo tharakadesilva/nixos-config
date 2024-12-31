@@ -27,7 +27,6 @@ with pkgs; [
   nodePackages.eas-cli
   nodePackages.npm
   openjdk
-  pinentry
   procs
   python3
   ripgrep
