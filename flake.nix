@@ -31,7 +31,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     secrets = {
-      url = "git+ssh://git@github.com/tharakadesilva/nixos-secrets.git";
+      url = "git+ssh://git@github.com/tharakadesilva/nixos-secrets.git?ref=main";
       flake = false;
     };
   };
