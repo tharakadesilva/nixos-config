@@ -2,6 +2,7 @@
 
 with pkgs; [
   # General packages for development and system management
+  awscli
   bat
   bazel-watcher
   bazelisk
@@ -11,11 +12,13 @@ with pkgs; [
   cowsay
   delta
   docker
+  docker-compose
   duf
   dust
   eza
   fd
   ffmpeg
+  fortune
   git
   git-lfs
   gnupg
@@ -26,12 +29,14 @@ with pkgs; [
   nodejs_22
   nodePackages.eas-cli
   nodePackages.npm
+  oh-my-zsh
   openjdk
   procs
   python3
   ripgrep
   rm-improved
   rsync
+  starship
   supabase-cli
   thefuck
   tmux

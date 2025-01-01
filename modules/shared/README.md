@@ -6,7 +6,6 @@ This configuration gets imported by both modules. Some configuration examples in
 ## Layout
 ```
 .
-├── config             # Config files not written in Nix
 ├── cachix             # Defines cachix, a global cache for builds
 ├── default.nix        # Defines how we import overlays 
 ├── files.nix          # Non-Nix, static configuration files (now immutable!)
