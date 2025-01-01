@@ -42,7 +42,6 @@ in
         "aws"
         "bazel"
         "bun"
-        "chucknorris"
         "colored-man-pages"
         "command-not-found"
         "common-aliases"
