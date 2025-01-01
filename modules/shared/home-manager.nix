@@ -85,10 +85,15 @@ in
         "xcode"
         "yarn"
         "zoxide"
-        "zsh-autosuggestions"
-        "zsh-completions"
-        "zsh-syntax-highlighting"
       ];
+    };
+
+    autosuggestion = {
+      enable = true;
+    };
+
+    syntaxHighlighting = {
+      enable = true;
     };
 
     initExtraFirst = ''
