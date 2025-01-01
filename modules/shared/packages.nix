@@ -18,7 +18,6 @@ with pkgs; [
   eza
   fd
   ffmpeg
-  fortune
   git
   git-lfs
   gnupg
