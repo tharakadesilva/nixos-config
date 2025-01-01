@@ -127,6 +127,8 @@ in
       rm = "rip";
       ps = "procs";
       top = "btm";
+      vi = "nvim";
+      vim = "nvim";
     };
   };
 
