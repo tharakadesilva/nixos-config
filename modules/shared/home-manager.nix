@@ -250,7 +250,7 @@ in
         ahead = "[⇡\${count}](italic green)";
         behind = "[⇣\${count}](italic red)";
         conflicted = "[~\${count}](italic bright-magenta)";
-        deleted = "[✘\${count}](italic red)";
+        deleted = "[x\${count}](italic red)";
         diverged = "[⇕ ⇡\${ahead_count} ⇣\${behind_count}](italic bright-magenta)";
         modified = "[!\${count}](italic yellow)";
         renamed = "[»\${count}](italic bright-blue)";
