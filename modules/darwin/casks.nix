@@ -1,23 +1,13 @@
 _:
 
 [
-  # Development Tools
+  "1password"
   "cursor"
-  "docker"
-  "visual-studio-code"
-  "warp"
-
-  # Communication Tools
   "discord"
+  "docker"
+  "google-chrome"
   "slack"
   "whatsapp"
-
-  # Utility Tools
-  "1password"
-
-  # Entertainment Tools
+  "warp"
   "vlc"
-
-  # Browsers
-  "google-chrome"
 ]

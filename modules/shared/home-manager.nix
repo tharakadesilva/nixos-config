@@ -5,6 +5,15 @@ let name = "Tharaka De Silva";
     email = "tharaka.uo@gmail.com";
 in
 {
+  awscli = {
+    enable = true;
+    settings = {
+      default = {
+        profile = "default";
+        region = "eu-west-3"; # Paris
+      };
+    };
+  };
 
   git = {
     enable = true;
