@@ -1,13 +1,16 @@
-{ agenix, config, pkgs, ... }:
-
-let user = "tharakadesilva"; in
-
 {
+  agenix,
+  config,
+  pkgs,
+  ...
+}: let
+  user = "tharakadesilva";
+in {
   imports = [
     ../../modules/darwin/secrets.nix
     ../../modules/darwin/home-manager.nix
     ../../modules/shared
-     agenix.darwinModules.default
+    agenix.darwinModules.default
   ];
 
   # Auto upgrade nix package and the daemon service.
@@ -17,18 +20,22 @@ let user = "tharakadesilva"; in
   nix = {
     package = pkgs.nix;
     settings = {
-      trusted-users = [ "@admin" "${user}" ];
-      substituters = [ "https://nix-community.cachix.org" "https://cache.nixos.org" ];
-      trusted-public-keys = [ "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=" ];
+      trusted-users = ["@admin" "${user}"];
+      substituters = ["https://nix-community.cachix.org" "https://cache.nixos.org"];
+      trusted-public-keys = ["cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="];
     };
 
     gc = {
       user = "root";
       automatic = true;
-      interval = { Weekday = 0; Hour = 2; Minute = 0; };
+      interval = {
+        Weekday = 0;
+        Hour = 2;
+        Minute = 0;
+      };
       options = "--delete-older-than 7d";
     };
-    
+
     optimise = {
       automatic = true;
     };
@@ -44,9 +51,11 @@ let user = "tharakadesilva"; in
   system.checks.verifyNixPath = false;
 
   # Load configuration that is shared across systems
-  environment.systemPackages = with pkgs; [
-    agenix.packages."${pkgs.system}".default
-  ] ++ (import ../../modules/shared/packages.nix { inherit pkgs; });
+  environment.systemPackages = with pkgs;
+    [
+      agenix.packages."${pkgs.system}".default
+    ]
+    ++ (import ../../modules/shared/packages.nix {inherit pkgs;});
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
@@ -67,7 +76,7 @@ let user = "tharakadesilva"; in
         AppleShowAllFiles = true;
         # 120, 94, 68, 35, 25, 15
         InitialKeyRepeat = 15;
-         # 120, 90, 60, 30, 12, 6, 2
+        # 120, 90, 60, 30, 12, 6, 2
         KeyRepeat = 2;
         NSAutomaticCapitalizationEnabled = false;
       };

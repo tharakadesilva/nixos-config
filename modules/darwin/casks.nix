@@ -1,6 +1,4 @@
-_:
-
-[
+_: [
   "1password"
   "cursor"
   "discord"

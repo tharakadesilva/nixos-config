@@ -1,10 +1,13 @@
-{ config, pkgs, lib, home-manager, ... }:
-
-let
-  user = "tharakadesilva";
-  sharedFiles = import ../shared/files.nix { inherit config pkgs; };
-in
 {
+  config,
+  pkgs,
+  lib,
+  home-manager,
+  ...
+}: let
+  user = "tharakadesilva";
+  sharedFiles = import ../shared/files.nix {inherit config pkgs;};
+in {
   # It me
   users.users.${user} = {
     name = "${user}";
@@ -40,7 +43,12 @@ in
   # Enable home-manager
   home-manager = {
     useGlobalPkgs = true;
-    users.${user} = { pkgs, config, lib, ... }:{
+    users.${user} = {
+      pkgs,
+      config,
+      lib,
+      ...
+    }: {
       home = {
         enableNixpkgsReleaseCheck = false;
         packages = pkgs.callPackage ./packages.nix {};
@@ -50,87 +58,89 @@ in
 
         stateVersion = "23.11";
       };
-      programs = {
-        vscode = {
-          enable = true;
-          mutableExtensionsDir = false;
-          extensions = [
-            pkgs.vscode-extensions.formulahendry.auto-rename-tag # Auto Rename Tag
-            pkgs.vscode-extensions.bazelbuild.vscode-bazel # Bazel
-            pkgs.vscode-extensions.streetsidesoftware.code-spell-checker # Code Spell Checker
-            pkgs.vscode-extensions.ms-vscode-remote.remote-containers # Dev Containers
-            pkgs.vscode-extensions.ms-azuretools.vscode-docker # Docker
-            pkgs.vscode-extensions.editorconfig.editorconfig # EditorConfig
-            pkgs.vscode-extensions.dbaeumer.vscode-eslint # ESLint
-            pkgs.vscode-extensions.github.vscode-pull-request-github # GitHub Pull Request
-            pkgs.vscode-extensions.github.github-vscode-theme # GitHub Theme
-            pkgs.vscode-extensions.golang.go # Go
-            pkgs.vscode-extensions.k--kato.intellij-idea-keybindings # IntelliJ IDEA Keybindings
-            pkgs.vscode-extensions.ms-python.isort # isort (Import Sorting)
-            pkgs.vscode-extensions.equinusocio.vsc-material-theme-icons # Material Icon Theme
-            pkgs.vscode-extensions.bbenoist.nix # Nix
-            pkgs.vscode-extensions.christian-kohler.path-intellisense # Path Intellisense
-            pkgs.vscode-extensions.esbenp.prettier-vscode # Prettier
-            pkgs.vscode-extensions.ms-python.vscode-pylance # Pylance
-            pkgs.vscode-extensions.ms-python.python # Python
-            pkgs.vscode-extensions.ms-python.debugpy # Debugpy
-            pkgs.vscode-extensions.redhat.vscode-yaml # YAML
-          ];
-          userSettings = {
-            "cSpell.userWords" = [
-              "bgcolor"
-              "clsx"
-              "dtype"
-              "MACD" 
-              "notistack"
-              "Stoch"
-              "taapi"
-              "tharakadesilva"
+      programs =
+        {
+          vscode = {
+            enable = true;
+            mutableExtensionsDir = false;
+            extensions = [
+              pkgs.vscode-extensions.formulahendry.auto-rename-tag # Auto Rename Tag
+              pkgs.vscode-extensions.bazelbuild.vscode-bazel # Bazel
+              pkgs.vscode-extensions.streetsidesoftware.code-spell-checker # Code Spell Checker
+              pkgs.vscode-extensions.ms-vscode-remote.remote-containers # Dev Containers
+              pkgs.vscode-extensions.ms-azuretools.vscode-docker # Docker
+              pkgs.vscode-extensions.editorconfig.editorconfig # EditorConfig
+              pkgs.vscode-extensions.dbaeumer.vscode-eslint # ESLint
+              pkgs.vscode-extensions.github.vscode-pull-request-github # GitHub Pull Request
+              pkgs.vscode-extensions.github.github-vscode-theme # GitHub Theme
+              pkgs.vscode-extensions.golang.go # Go
+              pkgs.vscode-extensions.k--kato.intellij-idea-keybindings # IntelliJ IDEA Keybindings
+              pkgs.vscode-extensions.ms-python.isort # isort (Import Sorting)
+              pkgs.vscode-extensions.equinusocio.vsc-material-theme-icons # Material Icon Theme
+              pkgs.vscode-extensions.bbenoist.nix # Nix
+              pkgs.vscode-extensions.christian-kohler.path-intellisense # Path Intellisense
+              pkgs.vscode-extensions.esbenp.prettier-vscode # Prettier
+              pkgs.vscode-extensions.ms-python.vscode-pylance # Pylance
+              pkgs.vscode-extensions.ms-python.python # Python
+              pkgs.vscode-extensions.ms-python.debugpy # Debugpy
+              pkgs.vscode-extensions.redhat.vscode-yaml # YAML
             ];
-            "diffEditor.ignoreTrimWhitespace" = false;
-            "editor.fontFamily" = "'JetbrainsMono Nerd Font'";
-            "editor.inlineSuggest.enabled" = true;
-            "editor.suggestSelection" = "first";
-            "explorer.confirmDelete" = false;
-            "files.autoSave" = "afterDelay";
-            "json.schemas" = [];
-            "terminal.integrated.fontFamily" = "JetbrainsMono Nerd Font";
-            "typescript.updateImportsOnFileMove.enabled" = "always";
-            "workbench.colorTheme" = "GitHub Dark Default";
-            "workbench.iconTheme" = "material-icon-theme";
-            "yaml.customTags" = [
-              "!And"
-              "!And sequence"
-              "!Base64"
-              "!Cidr"
-              "!Equals"
-              "!Equals sequence"
-              "!FindInMap"
-              "!FindInMap sequence"
-              "!GetAtt"
-              "!GetAZs"
-              "!If"
-              "!If sequence"
-              "!ImportValue"
-              "!ImportValue sequence"
-              "!Join"
-              "!Join sequence"
-              "!Not"
-              "!Not sequence"
-              "!Or"
-              "!Or sequence"
-              "!Ref"
-              "!Select"
-              "!Select sequence"
-              "!Split"
-              "!Split sequence"
-              "!Sub"
-              "!Sub sequence"
-            ];
-            "yaml.schemas" = {};
+            userSettings = {
+              "cSpell.userWords" = [
+                "bgcolor"
+                "clsx"
+                "dtype"
+                "MACD"
+                "notistack"
+                "Stoch"
+                "taapi"
+                "tharakadesilva"
+              ];
+              "diffEditor.ignoreTrimWhitespace" = false;
+              "editor.fontFamily" = "'JetbrainsMono Nerd Font'";
+              "editor.inlineSuggest.enabled" = true;
+              "editor.suggestSelection" = "first";
+              "explorer.confirmDelete" = false;
+              "files.autoSave" = "afterDelay";
+              "json.schemas" = [];
+              "terminal.integrated.fontFamily" = "JetbrainsMono Nerd Font";
+              "typescript.updateImportsOnFileMove.enabled" = "always";
+              "workbench.colorTheme" = "GitHub Dark Default";
+              "workbench.iconTheme" = "material-icon-theme";
+              "yaml.customTags" = [
+                "!And"
+                "!And sequence"
+                "!Base64"
+                "!Cidr"
+                "!Equals"
+                "!Equals sequence"
+                "!FindInMap"
+                "!FindInMap sequence"
+                "!GetAtt"
+                "!GetAZs"
+                "!If"
+                "!If sequence"
+                "!ImportValue"
+                "!ImportValue sequence"
+                "!Join"
+                "!Join sequence"
+                "!Not"
+                "!Not sequence"
+                "!Or"
+                "!Or sequence"
+                "!Ref"
+                "!Select"
+                "!Select sequence"
+                "!Split"
+                "!Split sequence"
+                "!Sub"
+                "!Sub sequence"
+              ];
+              "yaml.schemas" = {};
+            };
           };
-        };
-      } // import ../shared/home-manager.nix { inherit config pkgs lib; };
+        }
+        // import ../shared/home-manager.nix {inherit config pkgs lib;};
     };
   };
 }

@@ -1,10 +1,13 @@
-{ config, pkgs, lib, ... }:
-
-let name = "Tharaka De Silva";
-    user = "tharakadesilva";
-    email = "tharaka.uo@gmail.com";
-in
 {
+  config,
+  pkgs,
+  lib,
+  ...
+}: let
+  name = "Tharaka De Silva";
+  user = "tharakadesilva";
+  email = "tharaka.uo@gmail.com";
+in {
   awscli = {
     enable = true;
     settings = {
@@ -59,10 +62,12 @@ in
   ssh = {
     enable = true;
     includes = [
-      (lib.mkIf pkgs.stdenv.hostPlatform.isLinux
+      (
+        lib.mkIf pkgs.stdenv.hostPlatform.isLinux
         "/home/${user}/.ssh/config_external"
       )
-      (lib.mkIf pkgs.stdenv.hostPlatform.isDarwin
+      (
+        lib.mkIf pkgs.stdenv.hostPlatform.isDarwin
         "/Users/${user}/.ssh/config_external"
       )
     ];
@@ -70,10 +75,12 @@ in
       "github.com" = {
         identitiesOnly = true;
         identityFile = [
-          (lib.mkIf pkgs.stdenv.hostPlatform.isLinux
+          (
+            lib.mkIf pkgs.stdenv.hostPlatform.isLinux
             "/home/${user}/.ssh/id_github"
           )
-          (lib.mkIf pkgs.stdenv.hostPlatform.isDarwin
+          (
+            lib.mkIf pkgs.stdenv.hostPlatform.isDarwin
             "/Users/${user}/.ssh/id_github"
           )
         ];
@@ -86,7 +93,7 @@ in
     settings = {
       format = lib.concatStrings [
         "$os"
-        "$directory" 
+        "$directory"
         # version control
         "$fossil_branch"
         "$fossil_metrics"
@@ -121,7 +128,7 @@ in
         "$vcsh"
         # cloud
         "$aws"
-        "$azure" 
+        "$azure"
         "$gcloud"
         "$openstack"
         # containers
@@ -429,7 +436,7 @@ in
         COMPLETION_WAITING_DOTS="true"
 
         zstyle ':omz:plugins:alias-finder' autoload yes
-        zstyle ':omz:plugins:alias-finder' longer yes 
+        zstyle ':omz:plugins:alias-finder' longer yes
         zstyle ':omz:plugins:alias-finder' exact yes
         zstyle ':omz:plugins:alias-finder' cheaper yes
       '';
@@ -509,7 +516,7 @@ in
 
     shellGlobalAliases = {
       cat = "bat";
-      cd = "z"; 
+      cd = "z";
       cp = "rsync-copy";
       diff = "delta";
       du = "dust";
