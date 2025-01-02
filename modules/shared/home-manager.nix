@@ -514,7 +514,7 @@ in {
       export LC_ALL=en_US.UTF-8
     '';
 
-    shellGlobalAliases = {
+    shellAliases = {
       cat = "bat";
       cd = "z";
       cp = "rsync-copy";
