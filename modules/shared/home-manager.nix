@@ -122,7 +122,7 @@ in
       edit = "cursor";
       find = "fd";
       grep = "rg";
-      ls = "eza";
+      ls = "eza -la";
       mv = "rsync-move";
       rm = "rip";
       ps = "procs";
