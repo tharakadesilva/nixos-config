@@ -5,130 +5,70 @@ let name = "Tharaka De Silva";
     email = "tharaka.uo@gmail.com";
 in
 {
-  # Shared shell configuration
-  zsh = {
+
+  git = {
     enable = true;
-
-    history = {
-      ignorePatterns = [
-        "pwd *"
-        "ls *"
-        "eza *"
-        "cd *"
-      ];
-      save = 100000;
-      size = 100000;
-    };
-
-    oh-my-zsh = {
+    userName = name;
+    userEmail = email;
+    delta = {
       enable = true;
-      extraConfig = ''
-        # Uncomment the following line to enable command auto-correction.
-        ENABLE_CORRECTION="true"
-
-        # Uncomment the following line to display red dots whilst waiting for completion.
-        # You can also set it to another string to have that shown instead of the default red dots.
-        # e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
-        # Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
-        COMPLETION_WAITING_DOTS="true"
-
-        zstyle ':omz:plugins:alias-finder' autoload yes
-        zstyle ':omz:plugins:alias-finder' longer yes 
-        zstyle ':omz:plugins:alias-finder' exact yes
-        zstyle ':omz:plugins:alias-finder' cheaper yes
-      '';
-      plugins = [
-        "alias-finder"
-        "aws"
-        "bazel"
-        "bun"
-        "colored-man-pages"
-        "command-not-found"
-        "common-aliases"
-        "copyfile"
-        "copypath"
-        "dircycle"
-        "dirhistory"
-        "docker"
-        "docker-compose"
-        "encode64"
-        "extract"
-        "gcloud"
-        "git"
-        "golang"
-        "gpg-agent"
-        "gradle"
-        "helm"
-        "history"
-        "istioctl"
-        "jsontools"
-        "kubectl"
-        "macos"
-        "mvn"
-        "node"
-        "npm"
-        "pip"
-        "procs"
-        "python"
-        "rsync"
-        "rust"
-        "safe-paste"
-        "screen"
-        "ssh"
-        "terraform"
-        "tmux"
-        "thefuck"
-        "universalarchive"
-        "urltools"
-        "vscode"
-        "xcode"
-        "yarn"
-        "zoxide"
-      ];
+      options = {
+        navigate = true;
+        line-numbers = true;
+        hyperlinks-file-link-format = "cursor://file/{path}:{line}";
+      };
     };
-
-    autosuggestion = {
+    lfs = {
       enable = true;
     };
-
-    syntaxHighlighting = {
-      enable = true;
+    signing = {
+      key = "8327EC2441042FF8";
+      signByDefault = true;
     };
+    extraConfig = {
+      init.defaultBranch = "main";
+      core = {
+        editor = "cursor -w";
+        autocrlf = "input";
+      };
+      pull.rebase = true;
+      rebase.autoStash = true;
+      merge.conflictStyle = "zdiff3";
+    };
+  };
 
-    initExtraFirst = ''
-      if [[ -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]]; then
-        . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
-        . /nix/var/nix/profiles/default/etc/profile.d/nix.sh
-      fi
+  gpg = {
+    enable = true;
+    publicKeys = [
+      {
+        source = "/Users/${user}/.ssh/gpg_github";
+        trust = 5;
+      }
+    ];
+  };
 
-      fpath+=${pkgs.oh-my-zsh}/share/oh-my-zsh/plugins/zsh-completions/src
-    '';
-
-    envExtra = ''
-      export ARCHFLAGS="-arch $(uname -m)"
-      export EDITOR="cursor"
-      export LANG=en_US.UTF-8
-      export LC_ALL=en_US.UTF-8
-    '';
-
-    shellGlobalAliases = {
-      cat = "bat";
-      cd = "z"; 
-      cp = "rsync-copy";
-      diff = "delta";
-      du = "dust";
-      df = "duf";
-      easd = "/Users/taraka/git_tree/expo/eas-cli/bin/run";
-      edit = "cursor";
-      find = "fd";
-      grep = "rg";
-      ls = "eza -la";
-      mv = "rsync-move";
-      rm = "rip";
-      ps = "procs";
-      top = "btm";
-      vi = "nvim";
-      vim = "nvim";
+  ssh = {
+    enable = true;
+    includes = [
+      (lib.mkIf pkgs.stdenv.hostPlatform.isLinux
+        "/home/${user}/.ssh/config_external"
+      )
+      (lib.mkIf pkgs.stdenv.hostPlatform.isDarwin
+        "/Users/${user}/.ssh/config_external"
+      )
+    ];
+    matchBlocks = {
+      "github.com" = {
+        identitiesOnly = true;
+        identityFile = [
+          (lib.mkIf pkgs.stdenv.hostPlatform.isLinux
+            "/home/${user}/.ssh/id_github"
+          )
+          (lib.mkIf pkgs.stdenv.hostPlatform.isDarwin
+            "/Users/${user}/.ssh/id_github"
+          )
+        ];
+      };
     };
   };
 
@@ -452,69 +392,130 @@ in
     };
   };
 
-  git = {
+  # Shared shell configuration
+  zsh = {
     enable = true;
-    userName = name;
-    userEmail = email;
-    delta = {
-      enable = true;
-      options = {
-        navigate = true;
-        line-numbers = true;
-        hyperlinks-file-link-format = "cursor://file/{path}:{line}";
-      };
-    };
-    lfs = {
-      enable = true;
-    };
-    signing = {
-      key = "8327EC2441042FF8";
-      signByDefault = true;
-    };
-    extraConfig = {
-      init.defaultBranch = "main";
-      core = {
-        editor = "cursor -w";
-        autocrlf = "input";
-      };
-      pull.rebase = true;
-      rebase.autoStash = true;
-      merge.conflictStyle = "zdiff3";
-    };
-  };
 
-  ssh = {
-    enable = true;
-    includes = [
-      (lib.mkIf pkgs.stdenv.hostPlatform.isLinux
-        "/home/${user}/.ssh/config_external"
-      )
-      (lib.mkIf pkgs.stdenv.hostPlatform.isDarwin
-        "/Users/${user}/.ssh/config_external"
-      )
-    ];
-    matchBlocks = {
-      "github.com" = {
-        identitiesOnly = true;
-        identityFile = [
-          (lib.mkIf pkgs.stdenv.hostPlatform.isLinux
-            "/home/${user}/.ssh/id_github"
-          )
-          (lib.mkIf pkgs.stdenv.hostPlatform.isDarwin
-            "/Users/${user}/.ssh/id_github"
-          )
-        ];
-      };
+    history = {
+      ignorePatterns = [
+        "pwd *"
+        "ls *"
+        "eza *"
+        "cd *"
+      ];
+      save = 100000;
+      size = 100000;
     };
-  };
 
-  gpg = {
-    enable = true;
-    publicKeys = [
-      {
-        source = "/Users/${user}/.ssh/gpg_github";
-        trust = 5;
-      }
-    ];
+    oh-my-zsh = {
+      enable = true;
+      extraConfig = ''
+        # Uncomment the following line to enable command auto-correction.
+        ENABLE_CORRECTION="true"
+
+        # Uncomment the following line to display red dots whilst waiting for completion.
+        # You can also set it to another string to have that shown instead of the default red dots.
+        # e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+        # Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
+        COMPLETION_WAITING_DOTS="true"
+
+        zstyle ':omz:plugins:alias-finder' autoload yes
+        zstyle ':omz:plugins:alias-finder' longer yes 
+        zstyle ':omz:plugins:alias-finder' exact yes
+        zstyle ':omz:plugins:alias-finder' cheaper yes
+      '';
+      plugins = [
+        "alias-finder"
+        "aws"
+        "bazel"
+        "bun"
+        "colored-man-pages"
+        "command-not-found"
+        "common-aliases"
+        "copyfile"
+        "copypath"
+        "dircycle"
+        "dirhistory"
+        "docker"
+        "docker-compose"
+        "encode64"
+        "extract"
+        "gcloud"
+        "git"
+        "golang"
+        "gpg-agent"
+        "gradle"
+        "helm"
+        "history"
+        "istioctl"
+        "jsontools"
+        "kubectl"
+        "macos"
+        "mvn"
+        "node"
+        "npm"
+        "pip"
+        "procs"
+        "python"
+        "rsync"
+        "rust"
+        "safe-paste"
+        "screen"
+        "ssh"
+        "terraform"
+        "tmux"
+        "thefuck"
+        "universalarchive"
+        "urltools"
+        "vscode"
+        "xcode"
+        "yarn"
+        "zoxide"
+      ];
+    };
+
+    autosuggestion = {
+      enable = true;
+    };
+
+    syntaxHighlighting = {
+      enable = true;
+    };
+
+    initExtraFirst = ''
+      if [[ -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]]; then
+        . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+        . /nix/var/nix/profiles/default/etc/profile.d/nix.sh
+      fi
+
+      fpath+=${pkgs.oh-my-zsh}/share/oh-my-zsh/plugins/zsh-completions/src
+    '';
+
+    envExtra = ''
+      export ARCHFLAGS="-arch $(uname -m)"
+      export EDITOR="cursor"
+      export LANG=en_US.UTF-8
+      export LC_ALL=en_US.UTF-8
+    '';
+
+    shellGlobalAliases = {
+      cat = "bat";
+      cd = "z"; 
+      cp = "rsync-copy";
+      diff = "delta";
+      du = "dust";
+      df = "duf";
+      easd = "/Users/taraka/git_tree/expo/eas-cli/bin/run";
+      edit = "cursor";
+      find = "fd";
+      grep = "rg";
+      ls = "eza -la";
+      mv = "rsync-move";
+      rm = "rip";
+      ps = "procs";
+      top = "btm";
+      vi = "nvim";
+      vim = "nvim";
+    };
   };
 }
