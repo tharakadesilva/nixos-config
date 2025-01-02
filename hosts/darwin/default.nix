@@ -81,12 +81,13 @@ let user = "tharakadesilva"; in
         persistent-apps = [
           "/System/Applications/FaceTime.app"
           "/System/Applications/Messages.app"
-          "/Applications/WhatsApp.app"
+          "/Applications/1Password.app"
           "/Applications/Slack.app"
+          "/Applications/Discord.app"
+          "/Applications/WhatsApp.app"
           "/Applications/Google Chrome.app"
           "/Applications/Cursor.app"
           "/Applications/Warp.app"
-          "/Applications/1Password.app"
         ];
         persistent-others = [
           "${config.users.users.${user}.home}/Downloads"
