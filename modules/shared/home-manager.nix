@@ -456,25 +456,27 @@ in
     enable = true;
     userName = name;
     userEmail = email;
+    delta = {
+      enable = true;
+      options = {
+        navigate = true;
+        line-numbers = true;
+        hyperlinks-file-link-format = "cursor://file/{path}:{line}";
+      };
+    };
     lfs = {
       enable = true;
+    };
+    signing = {
+      key = "8327EC2441042FF8";
+      signByDefault = true;
     };
     extraConfig = {
       init.defaultBranch = "main";
       core = {
         editor = "cursor -w";
-        pager = "delta";
         autocrlf = "input";
       };
-      interactive = {
-        diffFilter = "delta --color-only";
-      };
-      delta = {
-        navigate = true;
-        line-numbers = true;
-        hyperlinks-file-link-format = "cursor://file/{path}:{line}";
-      };
-      commit.gpgsign = true;
       pull.rebase = true;
       rebase.autoStash = true;
       merge.conflictStyle = "zdiff3";
@@ -504,5 +506,15 @@ in
         ];
       };
     };
+  };
+
+  gpg = {
+    enable = true;
+    publicKeys = [
+      {
+        source = "/Users/${user}/.ssh/gpg_github";
+        trust = 5;
+      }
+    ];
   };
 }

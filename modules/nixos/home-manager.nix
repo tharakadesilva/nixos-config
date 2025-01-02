@@ -42,6 +42,5 @@ in
     udiskie.enable = true;
   };
 
-  programs = shared-programs // { gpg.enable = true; };
-
+  programs = shared-programs;
 }

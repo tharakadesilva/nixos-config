@@ -10,7 +10,6 @@ with pkgs; [
   buildifier
   bun
   cowsay
-  delta
   docker
   docker-compose
   duf
@@ -18,8 +17,6 @@ with pkgs; [
   eza
   fd
   ffmpeg
-  git
-  git-lfs
   gnupg
   go
   jq
