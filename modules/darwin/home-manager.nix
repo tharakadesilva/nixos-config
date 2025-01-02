@@ -77,9 +77,6 @@ in
             pkgs.vscode-extensions.redhat.vscode-yaml # YAML
           ];
           userSettings = {
-            "cursor.composer.collapsePaneInputBoxPills" = true;
-            "cursor.composer.renderPillsInsteadOfBlocks" = true;
-            "cursor.cpp.enablePartialAccepts" = true;
             "cSpell.userWords" = [
               "bgcolor"
               "clsx"
