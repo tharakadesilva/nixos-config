@@ -51,12 +51,12 @@ in {
 
   gpg = {
     enable = true;
-    publicKeys = [
-      {
-        source = "/Users/${user}/.ssh/gpg_github";
-        trust = 5;
-      }
-    ];
+    # publicKeys = [
+    #   {
+    #     source = "/Users/${user}/.ssh/gpg_github";
+    #     trust = 5;
+    #   }
+    # ];
   };
 
   ssh = {

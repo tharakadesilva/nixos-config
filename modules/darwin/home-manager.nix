@@ -6,6 +6,7 @@
   ...
 }: let
   user = "tharakadesilva";
+  sharedPrograms = import ../shared/home-manager.nix {inherit config pkgs lib;};
   sharedFiles = import ../shared/files.nix {inherit config pkgs;};
   additionalFiles = import ./files.nix {inherit user config pkgs;};
 in {
@@ -61,7 +62,8 @@ in {
         stateVersion = "23.11";
       };
       programs =
-        {
+        sharedPrograms
+        // {
           vscode = {
             enable = true;
             mutableExtensionsDir = false;
@@ -141,8 +143,7 @@ in {
               "yaml.schemas" = {};
             };
           };
-        }
-        // import ../shared/home-manager.nix {inherit config pkgs lib;};
+        };
     };
   };
 }

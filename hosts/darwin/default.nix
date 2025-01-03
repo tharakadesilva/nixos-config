@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: let
-  user = "tharakadesilva";
+  user = "tdesilva";
 in {
   imports = [
     ../../modules/darwin/secrets.nix

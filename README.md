@@ -8,6 +8,10 @@ If this is a fresh install, you need to restart the machine.
 
 ## Installing
 
+<details>
+
+<summary>MacOS</summary>
+
 ### 1. Install dependencies
 
 ```sh
@@ -25,6 +29,7 @@ Thank you for the [installer](https://zero-to-nix.com/concepts/nix-installer), [
 ```sh
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
 ```
+
 After installation, open a new terminal session to make the `nix` executable available in your `$PATH`. You'll need this in the steps ahead.
 
 ### 4. Copy the NIX SSH keys from USB
@@ -39,13 +44,13 @@ This should be done in the `~/` directory.
 git clone https://github.com/tharakadesilva/nixos-config.git
 ```
 
-### 6. Run the build script
+### 6. Build and apply the configuration
 
 ```sh
 nix run .#build-switch
 ```
 
-## Manual Steps
+### Manual Steps
 
 1. Set up the second fingerprint
 
@@ -74,3 +79,52 @@ Settings > Features > Terminal > Use Audible Bell > On
 6. Restart the machine
 
 Some settings like the tap to click on MacOS needs to either log out and log in again or restart the machine. Just restart the machine...
+
+</details>
+
+<details>
+
+<summary>Linux (non-NixOS)</summary>
+
+### 1. Install Nix
+
+Thank you for the [installer](https://zero-to-nix.com/concepts/nix-installer), [Determinate Systems](https://determinate.systems/)!
+
+```sh
+curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
+```
+
+For managed systems where you can't create users, you can use the following command to install Nix:
+
+```sh
+sh <(curl -L https://nixos.org/nix/install) --no-daemon
+```
+
+After installation, open a new terminal session to make the `nix` executable available in your `$PATH`. You'll need this in the steps ahead.
+
+### 2. Install Home Manager
+
+For Linux (non-NixOS), this has to be a standalone installation.
+
+```sh
+nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+nix-channel --update
+nix-shell '<home-manager>' -A install
+```
+
+### 3. Clone the Repository 
+
+This should be done in the `~/` directory.
+
+```sh
+git clone https://github.com/tharakadesilva/nixos-config.git
+```
+
+### 4. Build and apply the configuration
+
+```sh
+nix run .#build-switch
+```
+
+</details>
+

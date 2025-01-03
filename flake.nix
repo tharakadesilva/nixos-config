@@ -129,5 +129,18 @@
           ];
         }
     );
+
+    homeConfigurations = nixpkgs.lib.genAttrs linuxSystems (
+      system: let
+        user = "tdesilva";
+      in
+        home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.${system};
+          extraSpecialArgs = inputs;
+          modules = [
+            ./hosts/linux
+          ];
+        }
+    );
   };
 }
