@@ -6,7 +6,8 @@
 }: let
   user = "tdesilva";
   xdg_configHome = "/home/${user}/.config";
-  sharedPrograms = import ../shared/home-manager.nix {inherit config pkgs lib;};
+  nixRoot = "/home/tdesilva/.nix-profile";
+  sharedPrograms = import ../shared/home-manager.nix {inherit config pkgs lib nixRoot;};
   sharedFiles = import ../shared/files.nix {inherit config pkgs;};
   additionalFiles = import ./files.nix {inherit user config pkgs;};
 in {
@@ -25,7 +26,5 @@ in {
   programs =
     sharedPrograms
     // {
-      git.userName = "Taraka De Silva";
-      git.userEmail = "taraka.desilva@booking.com";
     };
 }

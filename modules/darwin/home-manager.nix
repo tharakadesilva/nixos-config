@@ -6,7 +6,8 @@
   ...
 }: let
   user = "tharakadesilva";
-  sharedPrograms = import ../shared/home-manager.nix {inherit config pkgs lib;};
+  nixRoot = "/nix/var/nix/profiles/default";
+  sharedPrograms = import ../shared/home-manager.nix {inherit config pkgs lib nixRoot;};
   sharedFiles = import ../shared/files.nix {inherit config pkgs;};
   additionalFiles = import ./files.nix {inherit user config pkgs;};
 in {

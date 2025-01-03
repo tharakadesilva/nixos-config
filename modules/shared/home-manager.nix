@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  nixRoot,
   ...
 }: let
   name = "Tharaka De Silva";
@@ -114,6 +115,7 @@ in {
         "$custom"
         "$direnv"
         "$env_var"
+        "$username"
         "$hostname"
         "$jobs"
         "$localip"
@@ -124,7 +126,6 @@ in {
         "$status"
         "$sudo"
         "$time"
-        "$username"
         "$vcsh"
         # cloud
         "$aws"
@@ -215,7 +216,19 @@ in {
         untracked = "[?\${count}](italic bright-yellow)";
       };
 
+      hostname = {
+        format = "[$ssh_symbol$hostname]($style) ";
+      };
+
       kubernetes = {
+        disabled = false;
+      };
+
+      username = {
+        format = "[$user]($style) @";
+      };
+
+      time = {
         disabled = false;
       };
 
@@ -267,10 +280,6 @@ in {
           Void = "";
           Windows = "󰍲";
         };
-      };
-
-      time = {
-        disabled = false;
       };
 
       aws = {
@@ -407,7 +416,6 @@ in {
       };
     };
   };
-
   # Shared shell configuration
   zsh = {
     enable = true;
@@ -499,9 +507,9 @@ in {
     };
 
     initExtraFirst = ''
-      if [[ -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]]; then
-        . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
-        . /nix/var/nix/profiles/default/etc/profile.d/nix.sh
+      if [[ -f ${nixRoot}/etc/profile.d/nix-daemon.sh ]]; then
+        . ${nixRoot}/etc/profile.d/nix-daemon.sh
+        . ${nixRoot}/etc/profile.d/nix.sh
       fi
 
       fpath+=${pkgs.oh-my-zsh}/share/oh-my-zsh/plugins/zsh-completions/src
@@ -521,7 +529,7 @@ in {
       diff = "delta";
       du = "dust";
       df = "duf";
-      easd = "/Users/taraka/git_tree/expo/eas-cli/bin/run";
+      easd = "/Users/tharakadesilva/git_tree/expo/eas-cli/bin/run";
       edit = "cursor";
       find = "fd";
       grep = "rg";
