@@ -7,6 +7,7 @@
 }: let
   user = "tharakadesilva";
   sharedFiles = import ../shared/files.nix {inherit config pkgs;};
+  additionalFiles = import ./files.nix { inherit user config pkgs; };
 in {
   # It me
   users.users.${user} = {
@@ -54,6 +55,7 @@ in {
         packages = pkgs.callPackage ./packages.nix {};
         file = lib.mkMerge [
           sharedFiles
+          additionalFiles
         ];
 
         stateVersion = "23.11";

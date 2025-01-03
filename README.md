@@ -2,6 +2,10 @@
 
 This is my NixOS configuration. If you want to create your own, check out [dustinlyons/nixos-config](https://github.com/dustinlyons/nixos-config) which was used as a template for this configuration.
 
+## Prerequisites
+
+If this is a fresh install, you need to restart the machine.
+
 ## Installing
 
 ### 1. Install dependencies
@@ -66,3 +70,7 @@ Settings > Privacy & Security > Apple Intelligence & Siri > Enable
 Settings > Appearance > Prompt > Shell Prompt (PS1)
 Settings > Appearance > Text > Terminal Font > JetBrainsMono Nerd Font
 Settings > Features > Terminal > Use Audible Bell > On
+
+6. Restart the machine
+
+Some settings like the tap to click on MacOS needs to either log out and log in again or restart the machine. Just restart the machine...

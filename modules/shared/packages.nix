@@ -23,7 +23,6 @@ with pkgs; [
   nodejs_22
   nodePackages.eas-cli
   nodePackages.npm
-  oh-my-zsh
   openjdk
   procs
   python3

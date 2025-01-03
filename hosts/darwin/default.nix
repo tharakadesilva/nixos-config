@@ -118,8 +118,6 @@ in {
 
       trackpad = {
         Clicking = true;
-        Dragging = true;
-        TrackpadThreeFingerDrag = true;
       };
 
       SoftwareUpdate.AutomaticallyInstallMacOSUpdates = true;
