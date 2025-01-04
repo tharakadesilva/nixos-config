@@ -90,7 +90,11 @@ in {
         persistent-apps = [
           "/System/Applications/FaceTime.app"
           "/System/Applications/Messages.app"
+          "/System/Applications/App Store.app"
+          "/System/Applications/System Settings.app"
           "/Applications/1Password.app"
+          "/Applications/Okta Verify.app"
+          "/Applications/Spotify.app"
           "/Applications/Slack.app"
           "/Applications/Discord.app"
           "/Applications/WhatsApp.app"

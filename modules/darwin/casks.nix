@@ -5,6 +5,7 @@ _: [
   "docker"
   "google-chrome"
   "slack"
+  "spotify"
   "whatsapp"
   "warp"
   "vlc"
