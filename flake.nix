@@ -2,15 +2,20 @@
   description = "Raka's NixOS Configuration";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
     agenix.url = "github:ryantm/agenix";
+
     home-manager.url = "github:nix-community/home-manager";
+
     darwin = {
       url = "github:LnL7/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     mac-app-util = {
       url = "github:hraban/mac-app-util";
     };
+
     nix-homebrew = {
       url = "github:zhaofengli-wip/nix-homebrew";
     };
@@ -26,10 +31,7 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     };
-    disko = {
-      url = "github:nix-community/disko";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+
     secrets = {
       url = "git+ssh://git@github.com/tharakadesilva/nixos-secrets.git?ref=main";
       flake = false;
@@ -45,11 +47,8 @@
     homebrew-cask,
     home-manager,
     nixpkgs,
-    disko,
-    agenix,
-    secrets,
+    ...
   } @ inputs: let
-    user = "tharakadesilva";
     linuxSystems = ["x86_64-linux" "aarch64-linux"];
     darwinSystems = ["aarch64-darwin" "x86_64-darwin"];
     forAllSystems = f: nixpkgs.lib.genAttrs (linuxSystems ++ darwinSystems) f;
@@ -96,7 +95,9 @@
     apps = nixpkgs.lib.genAttrs linuxSystems mkLinuxApps // nixpkgs.lib.genAttrs darwinSystems mkDarwinApps;
 
     darwinConfigurations = nixpkgs.lib.genAttrs darwinSystems (
-      system:
+      system: let
+        user = "tharakadesilva";
+      in
         darwin.lib.darwinSystem {
           inherit system;
           specialArgs = inputs;
