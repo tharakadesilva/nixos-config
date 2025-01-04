@@ -20,6 +20,7 @@ with pkgs; [
   jq
   maven
   neovim
+  node-gyp
   nodejs_22
   nodePackages.eas-cli
   nodePackages.npm
