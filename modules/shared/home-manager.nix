@@ -40,12 +40,25 @@ in {
     };
     extraConfig = {
       init.defaultBranch = "main";
+      checkout.defaultRemote = "origin";
       core = {
         editor = "cursor -w";
         autocrlf = "input";
       };
+      feature = {
+        experimental = true;
+        manyFiles = true;
+      };
+      fetch = {
+        prune = true;
+        pruneTags = true;
+      };
       pull.rebase = true;
+      push = {
+        autoSetupRemote = true;
+      };
       rebase.autoStash = true;
+      transfer.fsckObjects = true;
       merge.conflictStyle = "zdiff3";
     };
   };
