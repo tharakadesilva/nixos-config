@@ -515,6 +515,10 @@ in {
       fpath+=${pkgs.oh-my-zsh}/share/oh-my-zsh/plugins/zsh-completions/src
     '';
 
+    logoutExtra = ''
+      setopt norcs
+    '';
+
     envExtra = ''
       export ARCHFLAGS="-arch $(uname -m)"
       export EDITOR="cursor"
