@@ -205,6 +205,8 @@ in {
         "$spack"
       ];
 
+      command_timeout = 5000; # In large repos, commands such as `git status` can take a while to run.
+
       directory = {
         fish_style_pwd_dir_length = 1;
         substitutions = {
@@ -237,12 +239,12 @@ in {
         disabled = false;
       };
 
-      username = {
-        format = "[$user]($style) @";
-      };
-
       time = {
         disabled = false;
+      };
+
+      username = {
+        format = "[$user]($style) @";
       };
 
       os = {
