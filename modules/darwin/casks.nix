@@ -4,6 +4,7 @@ _: [
   "discord"
   "docker"
   "google-chrome"
+  "plex"
   "slack"
   "spotify"
   "whatsapp"
