@@ -36,12 +36,16 @@ After installation, open a new terminal session to make the `nix` executable ava
 
 The keys `id_ed25519` and `id_ed25519_agenix` need to be saved in the `~/.ssh` directory.
 
+```sh
+chmod 400 ~/.ssh/id_ed25519 ~/.ssh/id_ed25519_agenix
+```
+
 ### 5. Clone the Repository 
 
 This should be done in the `~/` directory.
 
 ```sh
-git clone https://github.com/tharakadesilva/nixos-config.git
+git clone git@github.com:tharakadesilva/nixos-config.git
 ```
 
 ### 6. Build and apply the configuration
@@ -52,31 +56,42 @@ nix run .#build-switch
 
 ### Manual Steps
 
-1. Set up the second fingerprint
+1. Update profile picture in MacOS Settings
+
+2. Set up the second fingerprint
 
 Settings > Touch ID & Password > Add Fingerprint
 
-2. Enable unlock with Apple Watch
+3. Enable unlock with Apple Watch
 
 Settings > Touch ID & Password > Unlock with Apple Watch
 
-3. Grant full disk access to Warp
+4. Grant full disk access to Warp
 
 Settings > Privacy & Security > Full Disk Access > + > Warp > Add Access
 
-4. Set up Apple Intelligence & Siri
+5. Set up Apple Intelligence & Siri
 
-Settings > Privacy & Security > Apple Intelligence & Siri > Enable
+Settings > Privacy & Security > Apple Intelligence & Siri
+* Enable Apple Intelligence
+* Enable Siri
+* ChatGPT > Set Up...
+  * Sign In
 
-<!-- TODO set the info and also how to set up chatgpt -->
-
-5. Set up Warp
+6. Set up Warp
 
 Settings > Appearance > Prompt > Shell Prompt (PS1)
 Settings > Appearance > Text > Terminal Font > JetBrainsMono Nerd Font
+Settings > Features > Session > Receive desktop notifications from Warp > On
 Settings > Features > Terminal > Use Audible Bell > On
 
-6. Restart the machine
+7. Accept Xcode license
+
+```sh
+sudo xcodebuild -license accept
+```
+
+8. Restart the machine
 
 Some settings like the tap to click on MacOS needs to either log out and log in again or restart the machine. Just restart the machine...
 
