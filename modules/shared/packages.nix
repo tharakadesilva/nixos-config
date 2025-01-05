@@ -7,6 +7,7 @@ with pkgs; [
   bottom
   buildifier
   bun
+  corepack
   cowsay
   docker
   docker-compose
