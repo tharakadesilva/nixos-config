@@ -89,6 +89,7 @@ in {
               pkgs.vscode-extensions.esbenp.prettier-vscode # Prettier
               pkgs.vscode-extensions.ms-python.vscode-pylance # Pylance
               pkgs.vscode-extensions.ms-python.python # Python
+              pkgs.vscode-extensions.swmansion.react-native-ide # Radon
               pkgs.vscode-extensions.ms-python.debugpy # Debugpy
               pkgs.vscode-extensions.redhat.vscode-yaml # YAML
             ];
