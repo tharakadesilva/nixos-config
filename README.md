@@ -85,13 +85,19 @@ Settings > Appearance > Text > Terminal Font > JetBrainsMono Nerd Font
 Settings > Features > Session > Receive desktop notifications from Warp > On
 Settings > Features > Terminal > Use Audible Bell > On
 
-7. Accept Xcode license
+7. Set up Wallet & Apple Pay
+
+Settings > Wallet & Apple Pay
+
+The cards are already added. You just need to verify the cards.
+
+8. Accept Xcode license
 
 ```sh
 sudo xcodebuild -license accept
 ```
 
-8. Restart the machine
+9. Restart the machine
 
 Some settings like the tap to click on MacOS needs to either log out and log in again or restart the machine. Just restart the machine...
 
