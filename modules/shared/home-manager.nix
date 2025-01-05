@@ -19,6 +19,10 @@ in {
     };
   };
 
+  direnv = {
+    enable = true;
+  };
+
   git = {
     enable = true;
     userName = name;
