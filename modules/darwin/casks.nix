@@ -7,6 +7,7 @@ _: [
   "plex"
   "slack"
   "spotify"
+  "torguard"
   "whatsapp"
   "warp"
   "vlc"
