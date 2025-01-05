@@ -24,6 +24,7 @@
       "editor.suggestSelection": "first",
       "explorer.confirmDelete": false,
       "files.autoSave": "afterDelay",
+      "git.confirmSync": false,
       "json.schemas": [],
       "terminal.integrated.fontFamily": "JetbrainsMono Nerd Font",
       "typescript.updateImportsOnFileMove.enabled": "always",
