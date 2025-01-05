@@ -89,7 +89,8 @@ in {
               pkgs.vscode-extensions.esbenp.prettier-vscode # Prettier
               pkgs.vscode-extensions.ms-python.vscode-pylance # Pylance
               pkgs.vscode-extensions.ms-python.python # Python
-              pkgs.vscode-extensions.swmansion.react-native-ide # Radon
+              # TODO: https://github.com/NixOS/nixpkgs/issues/371247
+              # pkgs.vscode-extensions.swmansion.react-native-ide # Radon
               pkgs.vscode-extensions.ms-python.debugpy # Debugpy
               pkgs.vscode-extensions.redhat.vscode-yaml # YAML
             ];
@@ -112,6 +113,7 @@ in {
               "files.autoSave" = "afterDelay";
               "git.confirmSync" = false;
               "json.schemas" = [];
+              "RadonIDE.panelLocation" = "side-panel";
               "terminal.integrated.fontFamily" = "JetbrainsMono Nerd Font";
               "typescript.updateImportsOnFileMove.enabled" = "always";
               "workbench.colorTheme" = "GitHub Dark Default";
