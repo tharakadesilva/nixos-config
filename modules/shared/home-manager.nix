@@ -557,6 +557,7 @@ in {
       find = "fd";
       grep = "rg";
       ls = "eza -la";
+      mkdir = "take";
       mv = "rsync-move";
       rm = "rip";
       ps = "procs";
