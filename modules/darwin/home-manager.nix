@@ -21,6 +21,14 @@ in {
 
   homebrew = {
     enable = true;
+    brews = [
+      # The following are needed for Expo:
+      "ca-certificates"
+      "cocoapods"
+      "libyaml"
+      "openssl@3"
+      "ruby"
+    ];
     casks = pkgs.callPackage ./casks.nix {};
     onActivation.autoUpdate = true;
     onActivation.upgrade = true;
