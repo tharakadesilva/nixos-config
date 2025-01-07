@@ -73,6 +73,7 @@ in {
             extensions = [
               pkgs.vscode-extensions.formulahendry.auto-rename-tag # Auto Rename Tag
               pkgs.vscode-extensions.bazelbuild.vscode-bazel # Bazel
+              pkgs.vscode-extensions.biomejs.biome # Biome
               pkgs.vscode-extensions.streetsidesoftware.code-spell-checker # Code Spell Checker
               pkgs.vscode-extensions.ms-vscode-remote.remote-containers # Dev Containers
               pkgs.vscode-extensions.ms-azuretools.vscode-docker # Docker
