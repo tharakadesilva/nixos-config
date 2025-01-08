@@ -548,6 +548,7 @@ in {
           nix flake new -t github:nix-community/nix-direnv .
           # This is needed to use MacOS's CC from XCode.
           sd 'pkgs.mkShell' 'pkgs.mkShell.override { stdenv = pkgs.stdenvNoCC; }' flake.nix
+          nix run nixpkgs#alejandra -- flake.nix
         elif [ ! -e .envrc ]; then
           echo "use flake" > .envrc
           direnv allow
