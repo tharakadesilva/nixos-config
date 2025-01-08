@@ -538,6 +538,7 @@ in {
 
     envExtra = ''
       export ARCHFLAGS="-arch $(uname -m)"
+      export COREPACK_ENABLE_AUTO_PIN=0
       export EDITOR="cursor"
       export LANG=en_US.UTF-8
       export LC_ALL=en_US.UTF-8
@@ -546,7 +547,7 @@ in {
         if [ ! -e flake.nix ]; then
           nix flake new -t github:nix-community/nix-direnv .
           # This is needed to use MacOS's CC from XCode.
-          sed -i '' 's/pkgs.mkShell/pkgs.mkShell.override { stdenv = pkgs.stdenvNoCC; }/' flake.nix
+          sd 'pkgs.mkShell' 'pkgs.mkShell.override { stdenv = pkgs.stdenvNoCC; }' flake.nix
         elif [ ! -e .envrc ]; then
           echo "use flake" > .envrc
           direnv allow

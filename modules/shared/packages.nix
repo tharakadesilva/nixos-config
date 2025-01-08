@@ -31,6 +31,7 @@ with pkgs; [
   ripgrep
   rm-improved
   rsync
+  sd
   supabase-cli
   thefuck
   tmux
