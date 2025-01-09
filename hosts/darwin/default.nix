@@ -126,10 +126,6 @@ in {
 
       SoftwareUpdate.AutomaticallyInstallMacOSUpdates = true;
     };
-
-    activationScripts.extraActivation.text = ''
-      softwareupdate --install-rosetta --agree-to-license
-    '';
   };
 
   security.pam.enableSudoTouchIdAuth = true;
