@@ -72,7 +72,7 @@ sudo xcodebuild -license accept
 2. Enable Corepack
 
 ```sh
-corepack enable
+sudo corepack enable
 ```
 
 3. Update profile picture in MacOS Settings
