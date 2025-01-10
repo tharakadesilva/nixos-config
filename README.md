@@ -69,21 +69,27 @@ nix run .#build-switch
 sudo xcodebuild -license accept
 ```
 
-2. Update profile picture in MacOS Settings
+2. Enable Corepack
 
-3. Set up the second fingerprint
+```sh
+corepack enable
+```
+
+3. Update profile picture in MacOS Settings
+
+4. Set up the second fingerprint
 
 Settings > Touch ID & Password > Add Fingerprint
 
-4. Enable unlock with Apple Watch
+5. Enable unlock with Apple Watch
 
 Settings > Touch ID & Password > Unlock with Apple Watch
 
-5. Grant full disk access to Warp
+6. Grant full disk access to Warp
 
 Settings > Privacy & Security > Full Disk Access > + > Warp > Add Access
 
-6. Set up Apple Intelligence & Siri
+7. Set up Apple Intelligence & Siri
 
 Settings > Privacy & Security > Apple Intelligence & Siri
 * Enable Apple Intelligence
@@ -91,25 +97,25 @@ Settings > Privacy & Security > Apple Intelligence & Siri
 * ChatGPT > Set Up...
   * Sign In
 
-7. Set up Warp
+8. Set up Warp
 
 * Settings > Appearance > Prompt > Shell Prompt (PS1)
 * Settings > Appearance > Text > Terminal Font > JetBrainsMono Nerd Font
 * Settings > Features > Session > Receive desktop notifications from Warp > On
 * Settings > Features > Terminal > Use Audible Bell > On
 
-8. Set up Magnet
+9. Set up Magnet
 
 Synchronize settings via iCloud
 
-9. Set up Wallet & Apple Pay
+10. Set up Wallet & Apple Pay
 
 Settings > Wallet & Apple Pay
 
 * The cards are already added. You just need to verify the cards.
 * Also, select `Hide My Email`
 
-10. Restart the machine
+11. Restart the machine
 
 Some settings like the tap to click on MacOS needs to either log out and log in again or restart the machine. Just restart the machine...
 
