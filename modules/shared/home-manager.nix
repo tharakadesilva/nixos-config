@@ -542,19 +542,6 @@ in {
       export EDITOR="cursor"
       export LANG=en_US.UTF-8
       export LC_ALL=en_US.UTF-8
-
-      flakify() {
-        if [ ! -e flake.nix ]; then
-          nix flake new -t github:nix-community/nix-direnv .
-          # This is needed to use MacOS's CC from XCode.
-          sd 'pkgs.mkShell' 'pkgs.mkShell.override { stdenv = pkgs.stdenvNoCC; }' flake.nix
-          nix run nixpkgs#alejandra -- flake.nix
-        elif [ ! -e .envrc ]; then
-          echo "use flake" > .envrc
-          direnv allow
-        fi
-        ${EDITOR:-vim} flake.nix
-      }
     '';
 
     shellAliases = {
