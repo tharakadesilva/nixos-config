@@ -7,7 +7,9 @@ with pkgs; [
   bottom
   buildifier
   bun
+  corepack_22
   cowsay
+  devenv
   docker
   docker-compose
   duf
@@ -20,10 +22,9 @@ with pkgs; [
   jq
   maven
   neovim
-  node-gyp
-  nodejs_20
-  nodePackages.eas-cli
-  nodePackages.npm
+  nodejs_22
+  nodePackages_latest.node-gyp
+  nodePackages_latest.eas-cli
   openjdk
   procs
   ripgrep
