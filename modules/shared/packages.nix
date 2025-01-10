@@ -26,7 +26,6 @@ with pkgs; [
   nodePackages.npm
   openjdk
   procs
-  python3
   ripgrep
   rm-improved
   rsync

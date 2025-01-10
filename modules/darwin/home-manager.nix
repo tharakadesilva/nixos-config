@@ -64,7 +64,13 @@ in {
     }: {
       home = {
         enableNixpkgsReleaseCheck = false;
-        packages = pkgs.callPackage ./packages.nix {};
+        packages =
+          [
+            (pkgs.python3.withPackages (ppkgs: [
+              ppkgs.setuptools
+            ]))
+          ]
+          ++ (pkgs.callPackage ./packages.nix {});
         file = lib.mkMerge [
           sharedFiles
           additionalFiles
