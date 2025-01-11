@@ -34,5 +34,6 @@ with pkgs; [
   supabase-cli
   thefuck
   tmux
+  watchman
   zoxide
 ]

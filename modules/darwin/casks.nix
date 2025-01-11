@@ -1,5 +1,6 @@
 _: [
   "1password"
+  "android-studio"
   "cursor"
   "discord"
   "docker"
