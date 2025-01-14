@@ -22,7 +22,7 @@ with pkgs; [
   jq
   maven
   neovim
-  nodejs_22
+  nodejs_20
   nodePackages_latest.node-gyp
   nodePackages_latest.eas-cli
   openjdk
