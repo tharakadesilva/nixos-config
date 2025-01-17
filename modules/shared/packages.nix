@@ -17,12 +17,13 @@ with pkgs; [
   eza
   fd
   ffmpeg
+  git-filter-repo
   gnupg
   go
   jq
   maven
   neovim
-  nodejs_20
+  nodejs_22
   nodePackages_latest.node-gyp
   nodePackages_latest.eas-cli
   openjdk

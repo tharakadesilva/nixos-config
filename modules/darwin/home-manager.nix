@@ -96,6 +96,8 @@ in {
               pkgs.vscode-extensions.github.vscode-pull-request-github # GitHub Pull Request
               pkgs.vscode-extensions.github.github-vscode-theme # GitHub Theme
               pkgs.vscode-extensions.golang.go # Go
+              # TODO: Create a ticket to add this extension
+              # pkgs.vscode-extensions.RobertOstermann.inline-parameters-extended # Inline Parameters Extended
               pkgs.vscode-extensions.k--kato.intellij-idea-keybindings # IntelliJ IDEA Keybindings
               pkgs.vscode-extensions.ms-python.isort # isort (Import Sorting)
               pkgs.vscode-extensions.equinusocio.vsc-material-theme-icons # Material Icon Theme
