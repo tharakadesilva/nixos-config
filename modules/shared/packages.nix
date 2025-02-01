@@ -1,6 +1,7 @@
 {pkgs}:
 with pkgs; [
   # General packages for development and system management
+  _1password-cli
   bat
   bazel-watcher
   bazelisk
