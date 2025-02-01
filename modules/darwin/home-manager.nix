@@ -46,7 +46,6 @@ in {
     # This message is safe to ignore. (https://github.com/dustinlyons/nixos-config/issues/83)
 
     masApps = {
-      "Magnet" = 441258766;
       "Okta Verify" = 490179405;
       "Say No to Notch" = 1639306886;
       "Xcode" = 497799835;

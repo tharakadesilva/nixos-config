@@ -104,18 +104,14 @@ Settings > Privacy & Security > Apple Intelligence & Siri
 * Settings > Features > Session > Receive desktop notifications from Warp > On
 * Settings > Features > Terminal > Use Audible Bell > On
 
-9. Set up Magnet
-
-Synchronize settings via iCloud
-
-10. Set up Wallet & Apple Pay
+9. Set up Wallet & Apple Pay
 
 Settings > Wallet & Apple Pay
 
 * The cards are already added. You just need to verify the cards.
 * Also, select `Hide My Email`
 
-11. Restart the machine
+10. Restart the machine
 
 Some settings like the tap to click on MacOS needs to either log out and log in again or restart the machine. Just restart the machine...
 
