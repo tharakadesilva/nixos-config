@@ -5,6 +5,8 @@
 }: let
   cursorSettings = ''
     {
+      "bazel.buildifierExecutable": "${pkgs.buildifier}/bin/buildifier",
+      "bazel.buildifierFixOnFormat": true,
       "cSpell.userWords": [
           "bgcolor",
           "clsx",
@@ -19,8 +21,11 @@
       "cursor.composer.renderPillsInsteadOfBlocks": true,
       "cursor.cpp.enablePartialAccepts": true,
       "diffEditor.ignoreTrimWhitespace": false,
-      "editor.fontFamily": "'JetbrainsMono Nerd Font'",
       "editor.inlineSuggest.enabled": true,
+      "editor.fontFamily": "'JetbrainsMono Nerd Font'",
+      "editor.formatOnPaste": true,
+      "editor.formatOnSave": true,
+      "editor.formatOnType": true,
       "editor.suggestSelection": "first",
       "explorer.confirmDelete": false,
       "files.autoSave": "afterDelay",

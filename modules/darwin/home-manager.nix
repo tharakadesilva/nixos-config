@@ -92,6 +92,8 @@ in {
               pkgs.vscode-extensions.ms-azuretools.vscode-docker # Docker
               pkgs.vscode-extensions.editorconfig.editorconfig # EditorConfig
               pkgs.vscode-extensions.dbaeumer.vscode-eslint # ESLint
+              # TODO: Create a ticket to add this extension
+              # pkgs.vscode-extensions.bdsoftware.format-on-auto-save # Format on Auto Save
               pkgs.vscode-extensions.github.vscode-pull-request-github # GitHub Pull Request
               pkgs.vscode-extensions.github.github-vscode-theme # GitHub Theme
               pkgs.vscode-extensions.golang.go # Go
@@ -111,6 +113,8 @@ in {
               pkgs.vscode-extensions.redhat.vscode-yaml # YAML
             ];
             userSettings = {
+              "bazel.buildifierExecutable" = "${pkgs.buildifier}/bin/buildifier";
+              "bazel.buildifierFixOnFormat" = true;
               "cSpell.userWords" = [
                 "bgcolor"
                 "clsx"
@@ -122,8 +126,11 @@ in {
                 "tharakadesilva"
               ];
               "diffEditor.ignoreTrimWhitespace" = false;
-              "editor.fontFamily" = "'JetbrainsMono Nerd Font'";
               "editor.inlineSuggest.enabled" = true;
+              "editor.fontFamily" = "'JetbrainsMono Nerd Font'";
+              "editor.formatOnPaste" = true;
+              "editor.formatOnSave" = true;
+              "editor.formatOnType" = true;
               "editor.suggestSelection" = "first";
               "explorer.confirmDelete" = false;
               "files.autoSave" = "afterDelay";
