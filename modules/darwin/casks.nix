@@ -6,6 +6,7 @@ _: [
   "discord"
   "docker"
   "google-chrome"
+  "ledger-live"
   "plex"
   "raycast"
   "slack"
