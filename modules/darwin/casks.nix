@@ -7,6 +7,7 @@ _: [
   "docker"
   "google-chrome"
   "plex"
+  "raycast"
   "slack"
   "spotify"
   "torguard"

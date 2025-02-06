@@ -5,5 +5,4 @@ in
   shared-packages
   ++ [
     pinentry_mac
-    raycast
   ]
