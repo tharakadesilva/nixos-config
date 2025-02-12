@@ -127,7 +127,7 @@ in {
               ];
               "diffEditor.ignoreTrimWhitespace" = false;
               "editor.inlineSuggest.enabled" = true;
-              "editor.fontFamily" = "'JetbrainsMono Nerd Font'";
+              "editor.fontFamily" = "'JetbrainsMono Nerd Font Mono'";
               "editor.formatOnPaste" = true;
               "editor.formatOnSave" = true;
               "editor.formatOnType" = true;
@@ -137,7 +137,7 @@ in {
               "git.confirmSync" = false;
               "json.schemas" = [];
               "RadonIDE.panelLocation" = "side-panel";
-              "terminal.integrated.fontFamily" = "JetbrainsMono Nerd Font";
+              "terminal.integrated.fontFamily" = "'JetbrainsMono Nerd Font Mono'";
               "typescript.updateImportsOnFileMove.enabled" = "always";
               "workbench.colorTheme" = "GitHub Dark Default";
               "workbench.iconTheme" = "material-icon-theme";
