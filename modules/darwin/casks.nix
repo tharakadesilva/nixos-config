@@ -7,6 +7,7 @@ _: [
   "docker"
   "google-chrome"
   "ledger-live"
+  "nvidia-geforce-now"
   "plex"
   "raycast"
   "slack"
