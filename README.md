@@ -20,7 +20,6 @@ xcode-select --install
 
 ### 2. Install Rosetta 2
 
-
 ```sh
 softwareupdate --install-rosetta --agree-to-license
 ```
@@ -47,7 +46,7 @@ The keys `id_ed25519` and `id_ed25519_agenix` need to be saved in the `~/.ssh` d
 chmod 400 ~/.ssh/id_ed25519 ~/.ssh/id_ed25519_agenix
 ```
 
-### 6. Clone the Repository 
+### 6. Clone the Repository
 
 This should be done in the `~/` directory.
 
@@ -92,24 +91,25 @@ Settings > Privacy & Security > Full Disk Access > + > Warp > Add Access
 7. Set up Apple Intelligence & Siri
 
 Settings > Privacy & Security > Apple Intelligence & Siri
-* Enable Apple Intelligence
-* Enable Siri
-* ChatGPT > Set Up...
-  * Sign In
+
+- Enable Apple Intelligence
+- Enable Siri
+- ChatGPT > Set Up...
+  - Sign In
 
 8. Set up Warp
 
-* Settings > Appearance > Prompt > Shell Prompt (PS1)
-* Settings > Appearance > Text > Terminal Font > JetBrainsMono Nerd Font
-* Settings > Features > Session > Receive desktop notifications from Warp > On
-* Settings > Features > Terminal > Use Audible Bell > On
+- Settings > Appearance > Prompt > Shell Prompt (PS1)
+- Settings > Appearance > Text > Terminal Font > JetBrainsMono Nerd Font Mono
+- Settings > Features > Session > Receive desktop notifications from Warp > On
+- Settings > Features > Terminal > Use Audible Bell > On
 
 9. Set up Wallet & Apple Pay
 
 Settings > Wallet & Apple Pay
 
-* The cards are already added. You just need to verify the cards.
-* Also, select `Hide My Email`
+- The cards are already added. You just need to verify the cards.
+- Also, select `Hide My Email`
 
 10. Restart the machine
 
@@ -147,7 +147,7 @@ nix-channel --update
 nix-shell '<home-manager>' -A install
 ```
 
-### 3. Clone the Repository 
+### 3. Clone the Repository
 
 This should be done in the `~/` directory.
 
@@ -162,4 +162,3 @@ nix run .#build-switch
 ```
 
 </details>
-
