@@ -11,7 +11,6 @@ with pkgs; [
   cloc
   corepack_22
   cowsay
-  devenv
   docker
   docker-compose
   duf
