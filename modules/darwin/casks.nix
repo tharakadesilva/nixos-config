@@ -9,6 +9,7 @@ _: [
   "ledger-live"
   "nvidia-geforce-now"
   "plex"
+  "postman"
   "raycast"
   "slack"
   "spotify"
