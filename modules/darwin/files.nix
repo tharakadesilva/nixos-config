@@ -36,6 +36,7 @@
       "terminal.integrated.fontFamily": "'JetbrainsMono Nerd Font Mono'",
       "terminal.integrated.fontSize": 13,
       "typescript.updateImportsOnFileMove.enabled": "always",
+      "update.releaseTrack": "prerelease",
       "workbench.colorTheme": "GitHub Dark Default",
       "workbench.iconTheme": "material-icon-theme",
       "yaml.customTags": [
