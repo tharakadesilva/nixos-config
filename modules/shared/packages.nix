@@ -23,7 +23,7 @@ with pkgs; [
   gnupg
   go
   jq
-  kubernetest-helm
+  kubernetes-helm
   maven
   neovim
   nodejs_22
