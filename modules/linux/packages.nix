@@ -4,4 +4,5 @@ with pkgs; let
 in
   shared-packages
   ++ [
+    pinentry
   ]
