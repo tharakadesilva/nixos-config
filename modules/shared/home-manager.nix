@@ -65,6 +65,7 @@ in {
       rebase.autoStash = true;
       transfer.fsckObjects = true;
       merge.conflictStyle = "zdiff3";
+      url."https://github.com".insteadOf = "git@github.com";
     };
   };
 
@@ -484,7 +485,6 @@ in {
         "gcloud"
         "git"
         "golang"
-        "gpg-agent"
         "gradle"
         "helm"
         "history"
@@ -511,6 +511,7 @@ in {
         "vscode"
         "xcode"
         "yarn"
+        "yum"
         "zoxide"
       ];
     };
