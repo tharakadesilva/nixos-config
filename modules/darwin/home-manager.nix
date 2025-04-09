@@ -78,6 +78,7 @@ in {
 
         stateVersion = "23.11";
       };
+
       programs =
         sharedPrograms
         // {
