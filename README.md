@@ -33,8 +33,10 @@ Settings > Privacy & Security > Full Disk Access > + > Terminal > Add Access
 Thank you for the [installer](https://zero-to-nix.com/concepts/nix-installer), [Determinate Systems](https://determinate.systems/)!
 
 ```sh
-curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
+curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install --nix-build-group-id 30000
 ```
+
+> **Note**: The build group id `30000` is a temporary workaround until Determinate Systems fixes their installation issues.
 
 After installation, open a new terminal session to make the `nix` executable available in your `$PATH`. You'll need this in the steps ahead.
 
