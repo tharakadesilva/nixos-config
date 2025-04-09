@@ -23,12 +23,14 @@ with pkgs; [
   gnupg
   go
   jq
+  kubernetest-helm
   maven
   neovim
   nodejs_22
-  nodePackages_latest.node-gyp
+  nodePackages.node-gyp
   nodePackages_latest.eas-cli
   openjdk
+  procps
   procs
   ripgrep
   rm-improved
@@ -38,5 +40,6 @@ with pkgs; [
   thefuck
   tmux
   watchman
+  xz
   zoxide
 ]
