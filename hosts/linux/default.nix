@@ -16,14 +16,6 @@ in {
     # agenix.nixosModules.default
   ];
 
-  nix = {
-    package = pkgs.nixVersions.git;
-    settings.trusted-users = ["@admin" "${user}"];
-    extraOptions = ''
-      experimental-features = nix-command flakes
-    '';
-  };
-
   # Setup user, packages, programs
   nix = {
     package = pkgs.nix;
