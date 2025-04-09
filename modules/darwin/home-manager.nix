@@ -103,7 +103,7 @@ in {
                 # pkgs.vscode-extensions.RobertOstermann.inline-parameters-extended # Inline Parameters Extended
                 pkgs.vscode-extensions.k--kato.intellij-idea-keybindings # IntelliJ IDEA Keybindings
                 pkgs.vscode-extensions.ms-python.isort # isort (Import Sorting)
-                pkgs.vscode-extensions.equinusocio.vsc-material-theme-icons # Material Icon Theme
+                pkgs.vscode-extensions.pkief.material-icon-theme # Material Icon Theme
                 pkgs.vscode-extensions.bbenoist.nix # Nix
                 pkgs.vscode-extensions.christian-kohler.path-intellisense # Path Intellisense
                 pkgs.vscode-extensions.esbenp.prettier-vscode # Prettier
