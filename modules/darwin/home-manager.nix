@@ -84,96 +84,98 @@ in {
           vscode = {
             enable = true;
             mutableExtensionsDir = false;
-            extensions = [
-              pkgs.vscode-extensions.formulahendry.auto-rename-tag # Auto Rename Tag
-              pkgs.vscode-extensions.bazelbuild.vscode-bazel # Bazel
-              pkgs.vscode-extensions.biomejs.biome # Biome
-              pkgs.vscode-extensions.streetsidesoftware.code-spell-checker # Code Spell Checker
-              pkgs.vscode-extensions.ms-vscode-remote.remote-containers # Dev Containers
-              pkgs.vscode-extensions.ms-azuretools.vscode-docker # Docker
-              pkgs.vscode-extensions.editorconfig.editorconfig # EditorConfig
-              pkgs.vscode-extensions.dbaeumer.vscode-eslint # ESLint
-              # TODO: Create a ticket to add this extension
-              # pkgs.vscode-extensions.bdsoftware.format-on-auto-save # Format on Auto Save
-              pkgs.vscode-extensions.github.vscode-pull-request-github # GitHub Pull Request
-              pkgs.vscode-extensions.github.github-vscode-theme # GitHub Theme
-              pkgs.vscode-extensions.golang.go # Go
-              # TODO: Create a ticket to add this extension
-              # pkgs.vscode-extensions.RobertOstermann.inline-parameters-extended # Inline Parameters Extended
-              pkgs.vscode-extensions.k--kato.intellij-idea-keybindings # IntelliJ IDEA Keybindings
-              pkgs.vscode-extensions.ms-python.isort # isort (Import Sorting)
-              pkgs.vscode-extensions.equinusocio.vsc-material-theme-icons # Material Icon Theme
-              pkgs.vscode-extensions.bbenoist.nix # Nix
-              pkgs.vscode-extensions.christian-kohler.path-intellisense # Path Intellisense
-              pkgs.vscode-extensions.esbenp.prettier-vscode # Prettier
-              pkgs.vscode-extensions.ms-python.vscode-pylance # Pylance
-              pkgs.vscode-extensions.ms-python.python # Python
-              # TODO: https://github.com/NixOS/nixpkgs/issues/371247
-              # pkgs.vscode-extensions.swmansion.react-native-ide # Radon
-              pkgs.vscode-extensions.ms-python.debugpy # Debugpy
-              pkgs.vscode-extensions.redhat.vscode-yaml # YAML
-            ];
-            userSettings = {
-              "bazel.buildifierExecutable" = "${pkgs.buildifier}/bin/buildifier";
-              "bazel.buildifierFixOnFormat" = true;
-              "cSpell.userWords" = [
-                "bgcolor"
-                "clsx"
-                "dtype"
-                "MACD"
-                "notistack"
-                "Stoch"
-                "taapi"
-                "tharakadesilva"
+            profiles.default = {
+              extensions = [
+                pkgs.vscode-extensions.formulahendry.auto-rename-tag # Auto Rename Tag
+                pkgs.vscode-extensions.bazelbuild.vscode-bazel # Bazel
+                pkgs.vscode-extensions.biomejs.biome # Biome
+                pkgs.vscode-extensions.streetsidesoftware.code-spell-checker # Code Spell Checker
+                pkgs.vscode-extensions.ms-vscode-remote.remote-containers # Dev Containers
+                pkgs.vscode-extensions.ms-azuretools.vscode-docker # Docker
+                pkgs.vscode-extensions.editorconfig.editorconfig # EditorConfig
+                pkgs.vscode-extensions.dbaeumer.vscode-eslint # ESLint
+                # TODO: Create a ticket to add this extension
+                # pkgs.vscode-extensions.bdsoftware.format-on-auto-save # Format on Auto Save
+                pkgs.vscode-extensions.github.vscode-pull-request-github # GitHub Pull Request
+                pkgs.vscode-extensions.github.github-vscode-theme # GitHub Theme
+                pkgs.vscode-extensions.golang.go # Go
+                # TODO: Create a ticket to add this extension
+                # pkgs.vscode-extensions.RobertOstermann.inline-parameters-extended # Inline Parameters Extended
+                pkgs.vscode-extensions.k--kato.intellij-idea-keybindings # IntelliJ IDEA Keybindings
+                pkgs.vscode-extensions.ms-python.isort # isort (Import Sorting)
+                pkgs.vscode-extensions.equinusocio.vsc-material-theme-icons # Material Icon Theme
+                pkgs.vscode-extensions.bbenoist.nix # Nix
+                pkgs.vscode-extensions.christian-kohler.path-intellisense # Path Intellisense
+                pkgs.vscode-extensions.esbenp.prettier-vscode # Prettier
+                pkgs.vscode-extensions.ms-python.vscode-pylance # Pylance
+                pkgs.vscode-extensions.ms-python.python # Python
+                # TODO: https://github.com/NixOS/nixpkgs/issues/371247
+                # pkgs.vscode-extensions.swmansion.react-native-ide # Radon
+                pkgs.vscode-extensions.ms-python.debugpy # Debugpy
+                pkgs.vscode-extensions.redhat.vscode-yaml # YAML
               ];
-              "diffEditor.ignoreTrimWhitespace" = false;
-              "editor.inlineSuggest.enabled" = true;
-              "editor.fontFamily" = "'JetbrainsMono Nerd Font Mono'";
-              "editor.fontSize" = 13;
-              "editor.formatOnPaste" = true;
-              "editor.formatOnSave" = true;
-              "editor.formatOnType" = true;
-              "editor.suggestSelection" = "first";
-              "explorer.confirmDelete" = false;
-              "files.autoSave" = "afterDelay";
-              "git.confirmSync" = false;
-              "json.schemas" = [];
-              "RadonIDE.panelLocation" = "side-panel";
-              "terminal.integrated.fontFamily" = "'JetbrainsMono Nerd Font Mono'";
-              "terminal.integrated.fontSize" = 13;
-              "typescript.updateImportsOnFileMove.enabled" = "always";
-              "workbench.colorTheme" = "GitHub Dark Default";
-              "workbench.iconTheme" = "material-icon-theme";
-              "yaml.customTags" = [
-                "!And"
-                "!And sequence"
-                "!Base64"
-                "!Cidr"
-                "!Equals"
-                "!Equals sequence"
-                "!FindInMap"
-                "!FindInMap sequence"
-                "!GetAtt"
-                "!GetAZs"
-                "!If"
-                "!If sequence"
-                "!ImportValue"
-                "!ImportValue sequence"
-                "!Join"
-                "!Join sequence"
-                "!Not"
-                "!Not sequence"
-                "!Or"
-                "!Or sequence"
-                "!Ref"
-                "!Select"
-                "!Select sequence"
-                "!Split"
-                "!Split sequence"
-                "!Sub"
-                "!Sub sequence"
-              ];
-              "yaml.schemas" = {};
+              userSettings = {
+                "bazel.buildifierExecutable" = "${pkgs.buildifier}/bin/buildifier";
+                "bazel.buildifierFixOnFormat" = true;
+                "cSpell.userWords" = [
+                  "bgcolor"
+                  "clsx"
+                  "dtype"
+                  "MACD"
+                  "notistack"
+                  "Stoch"
+                  "taapi"
+                  "tharakadesilva"
+                ];
+                "diffEditor.ignoreTrimWhitespace" = false;
+                "editor.inlineSuggest.enabled" = true;
+                "editor.fontFamily" = "'JetbrainsMono Nerd Font Mono'";
+                "editor.fontSize" = 13;
+                "editor.formatOnPaste" = true;
+                "editor.formatOnSave" = true;
+                "editor.formatOnType" = true;
+                "editor.suggestSelection" = "first";
+                "explorer.confirmDelete" = false;
+                "files.autoSave" = "afterDelay";
+                "git.confirmSync" = false;
+                "json.schemas" = [];
+                "RadonIDE.panelLocation" = "side-panel";
+                "terminal.integrated.fontFamily" = "'JetbrainsMono Nerd Font Mono'";
+                "terminal.integrated.fontSize" = 13;
+                "typescript.updateImportsOnFileMove.enabled" = "always";
+                "workbench.colorTheme" = "GitHub Dark Default";
+                "workbench.iconTheme" = "material-icon-theme";
+                "yaml.customTags" = [
+                  "!And"
+                  "!And sequence"
+                  "!Base64"
+                  "!Cidr"
+                  "!Equals"
+                  "!Equals sequence"
+                  "!FindInMap"
+                  "!FindInMap sequence"
+                  "!GetAtt"
+                  "!GetAZs"
+                  "!If"
+                  "!If sequence"
+                  "!ImportValue"
+                  "!ImportValue sequence"
+                  "!Join"
+                  "!Join sequence"
+                  "!Not"
+                  "!Not sequence"
+                  "!Or"
+                  "!Or sequence"
+                  "!Ref"
+                  "!Select"
+                  "!Select sequence"
+                  "!Split"
+                  "!Split sequence"
+                  "!Sub"
+                  "!Sub sequence"
+                ];
+                "yaml.schemas" = {};
+              };
             };
           };
         };
