@@ -113,6 +113,7 @@ in {
                 # TODO: https://github.com/NixOS/nixpkgs/issues/371247
                 # pkgs.vscode-extensions.swmansion.react-native-ide # Radon
                 pkgs.vscode-extensions.ms-python.debugpy # Debugpy
+                pkgs.vscode-extensions.ms-vscode-remote.vscode-remote-extensionpack # Remote Development
                 pkgs.vscode-extensions.redhat.vscode-yaml # YAML
               ];
               userSettings = {
