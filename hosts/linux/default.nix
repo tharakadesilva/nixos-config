@@ -18,7 +18,7 @@ in {
 
   # Setup user, packages, programs
   nix = {
-    package = pkgs.nix;
+    package = pkgs.nixVersions.git;
     settings = {
       trusted-users = ["@admin" "${user}"];
       substituters = ["https://nix-community.cachix.org" "https://cache.nixos.org"];
@@ -29,18 +29,8 @@ in {
     };
 
     gc = {
-      user = "tdesilva";
       automatic = true;
-      interval = {
-        Weekday = 0;
-        Hour = 2;
-        Minute = 0;
-      };
       options = "--delete-older-than 7d";
-    };
-
-    optimise = {
-      automatic = true;
     };
 
     extraOptions = ''
