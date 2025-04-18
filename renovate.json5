@@ -8,7 +8,16 @@
     ':automergePr',
     ':pinVersions',
   ],
+  "lockFileMaintenance": {
+    "enabled": true
+  },
   nix: {
     enabled: true,
   },
+  "packageRules": [
+    {
+      "matchPackageNames": ["/github\.com\/tharakadesilva\/nixos-secrets/"],
+      "enabled": false
+    }
+  ]
 }
