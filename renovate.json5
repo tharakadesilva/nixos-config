@@ -9,15 +9,19 @@
     ':pinVersions',
   ],
   "lockFileMaintenance": {
-    "enabled": true
+    "enabled": true,
   },
   nix: {
     enabled: true,
   },
   "packageRules": [
     {
+      "matchManagers": "nix",
+      "rangeStrategy": "auto",
+    },
+    {
       "matchPackageNames": ["/github\.com\/tharakadesilva\/nixos-secrets/"],
-      "enabled": false
+      "enabled": false,
     }
   ]
 }
