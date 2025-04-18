@@ -17,7 +17,7 @@
   "packageRules": [
     {
       "matchManagers": "nix",
-      "rangeStrategy": "auto",
+      "rangeStrategy": "in-range-only",
     },
     {
       "matchPackageNames": ["/github\.com\/tharakadesilva\/nixos-secrets/"],
