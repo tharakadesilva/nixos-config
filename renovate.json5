@@ -10,17 +10,18 @@
   ],
   "lockFileMaintenance": {
     "enabled": true,
+    "schedule": [
+      "at any time",
+    ],
   },
   nix: {
     enabled: true,
   },
   "packageRules": [
     {
-      "matchManagers": "nix",
-      "rangeStrategy": "in-range-only",
-    },
-    {
-      "matchPackageNames": ["/github\.com\/tharakadesilva\/nixos-secrets/"],
+      "matchPackageNames": [
+        "/github\.com\/tharakadesilva\/nixos-secrets/"
+      ],
       "enabled": false,
     }
   ]
