@@ -65,7 +65,7 @@ in {
       rebase.autoStash = true;
       transfer.fsckObjects = true;
       merge.conflictStyle = "zdiff3";
-      url."https://github.com".insteadOf = "git@github.com";
+      url."git@github.com".insteadOf = "https://github.com";
     };
   };
 
