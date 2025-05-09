@@ -524,7 +524,7 @@ in {
       enable = true;
     };
 
-    initExtraFirst = ''
+    initContent = lib.mkBefore ''
       if [[ -f ${nixRoot}/etc/profile.d/nix-daemon.sh ]]; then
         . ${nixRoot}/etc/profile.d/nix-daemon.sh
         . ${nixRoot}/etc/profile.d/nix.sh
