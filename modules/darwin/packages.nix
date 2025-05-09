@@ -4,6 +4,7 @@ with pkgs; let
 in
   shared-packages
   ++ [
+    _1password-cli
     pinentry_mac
     terminal-notifier
   ]
