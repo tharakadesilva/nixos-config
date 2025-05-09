@@ -21,6 +21,7 @@ with pkgs; [
   fd
   ffmpeg
   git-filter-repo
+  graphviz
   gnupg
   go
   jq
