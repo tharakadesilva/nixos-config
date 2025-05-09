@@ -5,4 +5,5 @@ in
   shared-packages
   ++ [
     pinentry_mac
+    terminal-notifier
   ]

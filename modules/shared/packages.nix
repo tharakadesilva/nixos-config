@@ -12,6 +12,7 @@ with pkgs; [
   corepack_22
   cowsay
   devenv
+  dive
   docker
   docker-compose
   duf

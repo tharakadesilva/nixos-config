@@ -6,6 +6,7 @@ _: [
   "discord"
   "docker"
   "google-chrome"
+  "intellij-idea"
   "ledger-live"
   "nvidia-geforce-now"
   "plex"
@@ -15,6 +16,6 @@ _: [
   "spotify"
   "torguard"
   "whatsapp"
-  "warp"
   "vlc"
+  "warp"
 ]
