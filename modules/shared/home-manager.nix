@@ -44,11 +44,21 @@ in {
       signByDefault = true;
     };
     extraConfig = {
-      init.defaultBranch = "main";
+      branch.sort = "-committerdate";
       checkout.defaultRemote = "origin";
+      column.ui = "auto";
+      commit.verbose = true;
       core = {
         editor = "cursor -w";
         autocrlf = "input";
+        fsmonitor = true;
+        untrackedCache = true;
+      };
+      diff = {
+        algorithm = "histogram";
+        colorMoved = "plain";
+        mnemonicPrefix = true;
+        renames = true;
       };
       feature = {
         experimental = true;
@@ -57,14 +67,27 @@ in {
       fetch = {
         prune = true;
         pruneTags = true;
+        all = true;
       };
+      help.autocorrect = "prompt";
+      init.defaultBranch = "main";
+      merge.conflictStyle = "zdiff3";
       pull.rebase = true;
       push = {
+        default = "simple";
         autoSetupRemote = true;
       };
-      rebase.autoStash = true;
+      rebase = {
+        autoStash = true;
+        autoSquash = true;
+        updateRefs = true;
+      };
+      rerere = {
+        enabled = true;
+        autoupdate = true;
+      };
+      tag.sort = "version:refname";
       transfer.fsckObjects = true;
-      merge.conflictStyle = "zdiff3";
       url."git@github.com:".insteadOf = "https://github.com/";
     };
   };
