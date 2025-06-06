@@ -23,6 +23,7 @@ with pkgs; [
   graphviz
   gnupg
   go
+  jdk24
   jq
   kubernetes-helm
   maven
@@ -30,7 +31,6 @@ with pkgs; [
   nodejs_22
   nodePackages.node-gyp
   nodePackages_latest.eas-cli
-  openjdk
   procps
   procs
   ripgrep
