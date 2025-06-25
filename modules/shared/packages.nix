@@ -7,7 +7,6 @@ with pkgs; [
   bottom
   buildifier
   bun
-  claude-code
   cloc
   corepack_22
   cowsay
