@@ -24,6 +24,7 @@
       "cursor.cpp.enablePartialAccepts": true,
       "cursor.terminal.usePreviewBox": true,
       "diffEditor.ignoreTrimWhitespace": false,
+      "diffEditor.renderSideBySide": false,
       "editor.inlineSuggest.enabled": true,
       "editor.fontFamily": "'JetbrainsMono Nerd Font Mono'",
       "editor.fontSize": 13,
