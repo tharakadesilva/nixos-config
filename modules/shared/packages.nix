@@ -39,7 +39,6 @@ with pkgs; [
   rsync
   sd
   supabase-cli
-  thefuck
   tmux
   watchman
   xz

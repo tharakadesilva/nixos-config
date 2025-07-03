@@ -542,7 +542,6 @@ in {
         "ssh"
         "terraform"
         "tmux"
-        "thefuck"
         "universalarchive"
         "urltools"
         "vscode"
