@@ -31,6 +31,7 @@ with pkgs; [
   nodejs_22
   nodePackages.node-gyp
   nodePackages_latest.eas-cli
+  pre-commit
   procps
   procs
   ripgrep
