@@ -4,7 +4,7 @@ _: [
   "android-studio"
   "cursor"
   "discord"
-  "docker"
+  "docker-desktop"
   "google-chrome"
   "intellij-idea"
   "ledger-live"
