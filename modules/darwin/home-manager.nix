@@ -21,6 +21,7 @@ in {
 
   homebrew = {
     enable = true;
+    taps = builtins.attrNames config.nix-homebrew.taps;
     brews = [
       "mas"
       # The following are needed for Expo:
