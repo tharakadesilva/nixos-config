@@ -145,6 +145,7 @@ in {
                 "editor.suggestSelection" = "first";
                 "explorer.confirmDelete" = false;
                 "files.autoSave" = "afterDelay";
+                "files.autoSaveDelay" = 2000;
                 "git.confirmSync" = false;
                 "json.schemas" = [];
                 "RadonIDE.panelLocation" = "side-panel";
