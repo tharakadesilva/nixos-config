@@ -579,12 +579,13 @@ in {
       export EDITOR="cursor"
       export LANG=en_US.UTF-8
       export LC_ALL=en_US.UTF-8
-      export JAVA_HOME=${pkgs.openjdk}
+      export JAVA_HOME=${pkgs.jdk24}
       export ANDROID_HOME=$HOME/Library/Android/sdk
       export PATH=$PATH:$ANDROID_HOME/emulator
       export PATH=$PATH:$ANDROID_HOME/platform-tools
       export PATH=$PATH:$HOME/go/bin
       export PATH=$PATH:$HOME/.local/bin
+      export PATH=$PATH:/Users/tharakadesilva/.bun/bin
     '';
 
     shellAliases = {
