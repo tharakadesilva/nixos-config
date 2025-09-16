@@ -582,7 +582,7 @@ in {
       export LC_ALL=en_US.UTF-8
       export GRAAL_HOME=${pkgs.graalvmPackages.graalvm-oracle_25-ea}
       export JAVA_HOME=${pkgs.graalvmPackages.graalvm-oracle_25-ea}
-      
+
       export PATH=$PATH:$ANDROID_HOME/emulator
       export PATH=$PATH:$ANDROID_HOME/platform-tools
       export PATH=$PATH:$HOME/go/bin
