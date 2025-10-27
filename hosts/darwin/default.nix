@@ -99,7 +99,7 @@ in {
           "/Applications/Discord.app"
           "/Applications/WhatsApp.app"
           "/Applications/Google Chrome.app"
-          "/Applications/Cursor.app"
+          "${pkgs.vscode}/Applications/Visual Studio Code.app"
           "/Applications/Warp.app"
         ];
         persistent-others = [

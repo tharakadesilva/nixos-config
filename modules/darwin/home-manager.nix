@@ -122,6 +122,10 @@ in {
                 pkgs.vscode-extensions.redhat.vscode-yaml # YAML
               ];
               userSettings = {
+                amp = {
+                  "url" = "https://ampcode.com/";
+                  "tab.enabled" = true;
+                };
                 "bazel.buildifierExecutable" = "${pkgs.buildifier}/bin/buildifier";
                 "bazel.buildifierFixOnFormat" = true;
                 "cSpell.userWords" = [
@@ -140,6 +144,9 @@ in {
                 "files.autoSave" = "afterDelay";
                 "files.autoSaveDelay" = 2000;
                 "git.confirmSync" = false;
+                "github.copilot.enable" = {
+                  "*" = false;
+                };
                 "json.schemas" = [];
                 "RadonIDE.panelLocation" = "side-panel";
                 "terminal.integrated.fontFamily" = "'JetbrainsMono Nerd Font Mono'";
