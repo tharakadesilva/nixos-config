@@ -143,7 +143,10 @@ in {
                 "explorer.confirmDelete" = false;
                 "files.autoSave" = "afterDelay";
                 "files.autoSaveDelay" = 2000;
-                "git.confirmSync" = false;
+                "git" = {
+                  "autofetch" = true;
+                  "confirmSync" = false;
+                };
                 "github.copilot.enable" = {
                   "*" = false;
                 };
