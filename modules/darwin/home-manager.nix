@@ -124,10 +124,8 @@ in {
                 pkgs.vscode-extensions.redhat.vscode-yaml # YAML
               ];
               userSettings = {
-                amp = {
-                  "url" = "https://ampcode.com/";
-                  "tab.enabled" = true;
-                };
+                "amp.url" = "https://ampcode.com/";
+                "amp.tab.enabled" = true;
                 "bazel.buildifierExecutable" = "${pkgs.buildifier}/bin/buildifier";
                 "bazel.buildifierFixOnFormat" = true;
                 "cSpell.userWords" = [
