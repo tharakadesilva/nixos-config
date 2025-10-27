@@ -184,6 +184,21 @@ in {
                   "!Sub sequence"
                 ];
                 "yaml.schemas" = {};
+                "[javascript]" = {
+                  "editor.defaultFormatter" = "vscode.typescript-language-features";
+                };
+                "[javascriptreact]" = {
+                  "editor.defaultFormatter" = "vscode.typescript-language-features";
+                };
+                "[json]" = {
+                  "editor.defaultFormatter" = "vscode.json-language-features";
+                };
+                "[typescript]" = {
+                  "editor.defaultFormatter" = "vscode.typescript-language-features";
+                };
+                "[typescriptreact]" = {
+                  "editor.defaultFormatter" = "vscode.typescript-language-features";
+                };
               };
             };
           };
