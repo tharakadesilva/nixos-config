@@ -92,6 +92,8 @@ in {
             mutableExtensionsDir = true;
             profiles.default = {
               extensions = [
+                # TODO: Create a ticket to add this extension
+                # pkgs.vscode-extensions.sourcegraph.amp
                 pkgs.vscode-extensions.formulahendry.auto-rename-tag # Auto Rename Tag
                 pkgs.vscode-extensions.bazelbuild.vscode-bazel # Bazel
                 pkgs.vscode-extensions.biomejs.biome # Biome
