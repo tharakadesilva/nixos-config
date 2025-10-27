@@ -33,7 +33,7 @@ in {
       options = {
         navigate = true;
         line-numbers = true;
-        hyperlinks-file-link-format = "cursor://file/{path}:{line}";
+        hyperlinks-file-link-format = "code://file/{path}:{line}";
       };
     };
     lfs = {
@@ -49,7 +49,7 @@ in {
       column.ui = "auto";
       commit.verbose = true;
       core = {
-        editor = "cursor -w";
+        editor = "code -w";
         autocrlf = "input";
         fsmonitor = true;
         untrackedCache = true;
@@ -577,7 +577,7 @@ in {
       export ANDROID_HOME=$HOME/Library/Android/sdk
       export ARCHFLAGS="-arch $(uname -m)"
       export COREPACK_ENABLE_AUTO_PIN=0
-      export EDITOR="cursor"
+      export EDITOR="code"
       export LANG=en_US.UTF-8
       export LC_ALL=en_US.UTF-8
       export GRAAL_HOME=${pkgs.graalvmPackages.graalvm-oracle_25-ea}
@@ -598,7 +598,7 @@ in {
       du = "dust";
       df = "duf";
       easd = "/Users/tharakadesilva/git_tree/expo/eas-cli/bin/run";
-      edit = "cursor";
+      edit = "code";
       find = "fd";
       grep = "rg";
       ls = "eza -la";

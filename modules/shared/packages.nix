@@ -42,5 +42,6 @@ with pkgs; [
   tmux
   watchman
   xz
+  visualvm
   zoxide
 ]

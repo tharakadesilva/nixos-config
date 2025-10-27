@@ -89,7 +89,7 @@ in {
         // {
           vscode = {
             enable = true;
-            mutableExtensionsDir = false;
+            mutableExtensionsDir = true;
             profiles.default = {
               extensions = [
                 pkgs.vscode-extensions.formulahendry.auto-rename-tag # Auto Rename Tag
@@ -125,13 +125,6 @@ in {
                 "bazel.buildifierExecutable" = "${pkgs.buildifier}/bin/buildifier";
                 "bazel.buildifierFixOnFormat" = true;
                 "cSpell.userWords" = [
-                  "bgcolor"
-                  "clsx"
-                  "dtype"
-                  "MACD"
-                  "notistack"
-                  "Stoch"
-                  "taapi"
                   "tharakadesilva"
                 ];
                 "diffEditor.ignoreTrimWhitespace" = false;

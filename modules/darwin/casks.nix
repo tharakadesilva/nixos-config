@@ -2,7 +2,6 @@ _: [
   "1password"
   "adobe-acrobat-reader"
   "android-studio"
-  "cursor"
   "discord"
   "docker-desktop"
   "google-chrome"
