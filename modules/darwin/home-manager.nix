@@ -196,6 +196,9 @@ in {
                 "[json]" = {
                   "editor.defaultFormatter" = "vscode.json-language-features";
                 };
+                "[jsonc]" = {
+                  "editor.defaultFormatter" = "vscode.json-language-features";
+                };
                 "[typescript]" = {
                   "editor.defaultFormatter" = "vscode.typescript-language-features";
                 };
