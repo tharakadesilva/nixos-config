@@ -126,6 +126,12 @@ in {
               userSettings = {
                 "amp.url" = "https://ampcode.com/";
                 "amp.tab.enabled" = true;
+                "amp.permissions" = [
+                  {
+                    "tool" = "*";
+                    "action" = "allow";
+                  }
+                ];
                 "bazel.buildifierExecutable" = "${pkgs.buildifier}/bin/buildifier";
                 "bazel.buildifierFixOnFormat" = true;
                 "cSpell.userWords" = [
