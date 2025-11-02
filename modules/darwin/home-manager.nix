@@ -157,7 +157,8 @@ in {
                   "*" = false;
                 };
                 "json.schemas" = [];
-                "RadonIDE.panelLocation" = "side-panel";
+                "RadonIDE.deviceSettings.appearance" = "dark";
+                "RadonIDE.userInterface.panelLocation" = "side-panel";
                 "terminal.integrated.fontFamily" = "'JetbrainsMono Nerd Font Mono'";
                 "terminal.integrated.fontSize" = 13;
                 "typescript.updateImportsOnFileMove.enabled" = "always";
