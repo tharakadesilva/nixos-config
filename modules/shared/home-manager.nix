@@ -24,68 +24,80 @@ in {
     nix-direnv.enable = true;
   };
 
+  delta = {
+    enable = true;
+    enableGitIntegration = true;
+    options = {
+      navigate = true;
+      line-numbers = true;
+      hyperlinks-file-link-format = "code://file/{path}:{line}";
+    };
+  };
+
   git = {
     enable = true;
-    userName = name;
-    userEmail = email;
-    delta = {
-      enable = true;
-      options = {
-        navigate = true;
-        line-numbers = true;
-        hyperlinks-file-link-format = "code://file/{path}:{line}";
-      };
-    };
-    lfs = {
-      enable = true;
-    };
+    lfs.enable = true;
     signing = {
       key = "8327EC2441042FF8";
       signByDefault = true;
     };
-    extraConfig = {
+    settings = {
+      user = {
+        name = name;
+        email = email;
+      };
+
       branch.sort = "-committerdate";
       checkout.defaultRemote = "origin";
       column.ui = "auto";
       commit.verbose = true;
+
       core = {
         editor = "code -w";
         autocrlf = "input";
         fsmonitor = true;
         untrackedCache = true;
       };
+
       diff = {
         algorithm = "histogram";
         colorMoved = "plain";
         mnemonicPrefix = true;
         renames = true;
       };
+
       feature = {
         experimental = true;
         manyFiles = true;
       };
+
       fetch = {
         prune = true;
         pruneTags = true;
         all = true;
       };
+
       help.autocorrect = "prompt";
       init.defaultBranch = "main";
       merge.conflictStyle = "zdiff3";
       pull.rebase = true;
+
       push = {
         default = "simple";
         autoSetupRemote = true;
       };
+
       rebase = {
         autoStash = true;
         autoSquash = true;
         updateRefs = true;
       };
+
       rerere = {
         enabled = true;
         autoupdate = true;
       };
+
       tag.sort = "version:refname";
       transfer.fsckObjects = true;
       url."git@github.com:".insteadOf = "https://github.com/";
@@ -104,6 +116,7 @@ in {
 
   ssh = {
     enable = true;
+    enableDefaultConfig = false;
     includes = [
       (
         lib.mkIf pkgs.stdenv.hostPlatform.isLinux
@@ -115,6 +128,20 @@ in {
       )
     ];
     matchBlocks = {
+      "*" = {
+        forwardAgent = false;
+        serverAliveInterval = 0;
+        serverAliveCountMax = 3;
+        compression = false;
+        extraOptions = {
+          AddKeysToAgent = "no";
+          HashKnownHosts = "no";
+          UserKnownHostsFile = "~/.ssh/known_hosts";
+          ControlMaster = "no";
+          ControlPath = "~/.ssh/master-%r@%n:%p";
+          ControlPersist = "no";
+        };
+      };
       "github.com" = {
         identitiesOnly = true;
         identityFile = [
