@@ -27,6 +27,7 @@ in {
       # The following are needed for Expo:
       "ca-certificates"
       "cocoapods"
+      "fastlane"
       "libyaml"
       "openssl@3"
       "ruby"
