@@ -157,7 +157,11 @@ in {
                   "*" = false;
                 };
                 "json.schemas" = [];
+                "RadonIDE.deviceControl.stopPreviousDevices" = "true";
                 "RadonIDE.deviceSettings.appearance" = "dark";
+                "RadonIDE.deviceSettings.replaysEnabled" = true;
+                "RadonIDE.deviceSettings.showTouches" = true;
+                "RadonIDE.general.defaultMultimediaSavingLocation" = "~/Downloads";
                 "RadonIDE.userInterface.panelLocation" = "side-panel";
                 "terminal.integrated.fontFamily" = "'JetbrainsMono Nerd Font Mono'";
                 "terminal.integrated.fontSize" = 13;
