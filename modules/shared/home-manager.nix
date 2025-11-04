@@ -580,8 +580,8 @@ in {
       export EDITOR="code"
       export LANG=en_US.UTF-8
       export LC_ALL=en_US.UTF-8
-      export GRAAL_HOME=${pkgs.graalvmPackages.graalvm-oracle_25-ea}
-      export JAVA_HOME=${pkgs.graalvmPackages.graalvm-oracle_25-ea}
+      export GRAAL_HOME=${pkgs.graalvmPackages.graalvm-oracle_25}
+      export JAVA_HOME=${pkgs.graalvmPackages.graalvm-oracle_25}
 
       export PATH=$PATH:$ANDROID_HOME/emulator
       export PATH=$PATH:$ANDROID_HOME/platform-tools

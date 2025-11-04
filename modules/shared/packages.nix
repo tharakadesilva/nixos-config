@@ -23,7 +23,7 @@ with pkgs; [
   graphviz
   gnupg
   go
-  graalvmPackages.graalvm-oracle_25-ea
+  graalvmPackages.graalvm-oracle_25
   jq
   kubernetes-helm
   maven
