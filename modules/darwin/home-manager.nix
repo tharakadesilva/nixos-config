@@ -126,8 +126,6 @@ in {
                 # TODO: Create a ticket to add this extension
                 # pkgs.vscode-extensions.RobertOstermann.inline-parameters-extended # Inline Parameters Extended
                 pkgs.vscode-extensions.usernamehw.errorlens
-                # TODO: Create a ticket to add this extension
-                # pkgs.vscode-extensions.WallabyJs.console-ninja
                 pkgs.vscode-extensions.wix.vscode-import-cost
                 pkgs.vscode-extensions.yoavbls.pretty-ts-errors
               ];
