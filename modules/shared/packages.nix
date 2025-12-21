@@ -28,6 +28,7 @@ with pkgs; [
   kubernetes-helm
   maven
   neovim
+  nixfmt
   nodejs_22
   nodePackages.node-gyp
   nodePackages_latest.eas-cli

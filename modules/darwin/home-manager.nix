@@ -97,6 +97,8 @@ in {
                 # pkgs.vscode-extensions.sourcegraph.amp
                 pkgs.vscode-extensions.formulahendry.auto-rename-tag # Auto Rename Tag
                 pkgs.vscode-extensions.bazelbuild.vscode-bazel # Bazel
+                # TODO: Create a ticket to add this extension
+                # pkgs.vscode-extensions.blazejkustra.react-compiler-marker
                 pkgs.vscode-extensions.biomejs.biome # Biome
                 pkgs.vscode-extensions.streetsidesoftware.code-spell-checker # Code Spell Checker
                 pkgs.vscode-extensions.ms-vscode-remote.remote-containers # Dev Containers
@@ -108,12 +110,10 @@ in {
                 pkgs.vscode-extensions.github.vscode-pull-request-github # GitHub Pull Request
                 pkgs.vscode-extensions.github.github-vscode-theme # GitHub Theme
                 pkgs.vscode-extensions.golang.go # Go
-                # TODO: Create a ticket to add this extension
-                # pkgs.vscode-extensions.RobertOstermann.inline-parameters-extended # Inline Parameters Extended
+                pkgs.vscode-extensions.jnoortheen.nix-ide
                 pkgs.vscode-extensions.k--kato.intellij-idea-keybindings # IntelliJ IDEA Keybindings
                 pkgs.vscode-extensions.ms-python.isort # isort (Import Sorting)
                 pkgs.vscode-extensions.pkief.material-icon-theme # Material Icon Theme
-                pkgs.vscode-extensions.bbenoist.nix # Nix
                 pkgs.vscode-extensions.christian-kohler.path-intellisense # Path Intellisense
                 pkgs.vscode-extensions.esbenp.prettier-vscode # Prettier
                 pkgs.vscode-extensions.ms-python.vscode-pylance # Pylance
@@ -123,6 +123,13 @@ in {
                 pkgs.vscode-extensions.ms-python.debugpy # Debugpy
                 pkgs.vscode-extensions.ms-vscode-remote.vscode-remote-extensionpack # Remote Development
                 pkgs.vscode-extensions.redhat.vscode-yaml # YAML
+                # TODO: Create a ticket to add this extension
+                # pkgs.vscode-extensions.RobertOstermann.inline-parameters-extended # Inline Parameters Extended
+                pkgs.vscode-extensions.usernamehw.errorlens
+                # TODO: Create a ticket to add this extension
+                # pkgs.vscode-extensions.WallabyJs.console-ninja
+                pkgs.vscode-extensions.wix.vscode-import-cost
+                pkgs.vscode-extensions.yoavbls.pretty-ts-errors
               ];
               userSettings = {
                 "amp.url" = "https://ampcode.com/";
