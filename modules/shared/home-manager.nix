@@ -610,6 +610,7 @@ in {
       export LANG=en_US.UTF-8
       export LC_ALL=en_US.UTF-8
       export GRAAL_HOME=${pkgs.graalvmPackages.graalvm-oracle_25}
+      export GRAVEYARD=$HOME/.local/share/Trash
       export JAVA_HOME=${pkgs.graalvmPackages.graalvm-oracle_25}
 
       export PATH=$PATH:$ANDROID_HOME/emulator

@@ -4,8 +4,7 @@
   lib,
   home-manager,
   ...
-}:
-let
+}: let
   user = "tharakadesilva";
   nixRoot = "/nix/var/nix/profiles/default";
   sharedPrograms = import ../shared/home-manager.nix {
@@ -16,10 +15,9 @@ let
       nixRoot
       ;
   };
-  sharedFiles = import ../shared/files.nix { inherit config pkgs; };
-  additionalFiles = import ./files.nix { inherit user config pkgs; };
-in
-{
+  sharedFiles = import ../shared/files.nix {inherit config pkgs;};
+  additionalFiles = import ./files.nix {inherit user config pkgs;};
+in {
   # It me
   users.users.${user} = {
     name = "${user}";
@@ -43,7 +41,7 @@ in
       "ruby"
       # End of Expo requirements
     ];
-    casks = pkgs.callPackage ./casks.nix { };
+    casks = pkgs.callPackage ./casks.nix {};
     onActivation = {
       autoUpdate = true;
       upgrade = true;
@@ -72,31 +70,32 @@ in
   # Enable home-manager
   home-manager = {
     useGlobalPkgs = true;
-    users.${user} =
-      {
-        pkgs,
-        config,
-        lib,
-        ...
-      }:
-      {
-        home = {
-          enableNixpkgsReleaseCheck = false;
-          packages = [
+    users.${user} = {
+      pkgs,
+      config,
+      lib,
+      ...
+    }: {
+      home = {
+        enableNixpkgsReleaseCheck = false;
+        packages =
+          [
             (pkgs.python3.withPackages (ppkgs: [
               ppkgs.setuptools
             ]))
           ]
-          ++ (pkgs.callPackage ./packages.nix { });
-          file = lib.mkMerge [
-            sharedFiles
-            additionalFiles
-          ];
+          ++ (pkgs.callPackage ./packages.nix {});
+        file = lib.mkMerge [
+          sharedFiles
+          additionalFiles
+        ];
 
-          stateVersion = "23.11";
-        };
+        stateVersion = "23.11";
+      };
 
-        programs = sharedPrograms // {
+      programs =
+        sharedPrograms
+        // {
           vscode = {
             enable = true;
             mutableExtensionsDir = true;
@@ -164,12 +163,12 @@ in
                 "explorer.confirmDelete" = false;
                 "files.autoSave" = "afterDelay";
                 "files.autoSaveDelay" = 2000;
-                "json.schemas" = [ ];
+                "json.schemas" = [];
                 "RadonIDE.deviceControl.stopPreviousDevices" = "true";
                 "RadonIDE.deviceSettings.appearance" = "dark";
                 "RadonIDE.deviceSettings.location" = {
                   "latitude" = 52.378901;
-                  "longitude" =  4.9005805;
+                  "longitude" = 4.9005805;
                   "isDisabled" = false;
                 };
                 "RadonIDE.deviceSettings.replaysEnabled" = true;
@@ -210,16 +209,16 @@ in
                   "!Sub"
                   "!Sub sequence"
                 ];
-                "yaml.schemas" = { };
+                "yaml.schemas" = {};
               };
             };
           };
         };
 
-        services.gpg-agent = {
-          enable = true;
-          pinentry.package = pkgs.pinentry_mac;
-        };
+      services.gpg-agent = {
+        enable = true;
+        pinentry.package = pkgs.pinentry_mac;
       };
+    };
   };
 }
