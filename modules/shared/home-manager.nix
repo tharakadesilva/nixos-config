@@ -78,6 +78,7 @@ in {
       };
 
       help.autocorrect = "prompt";
+      extensions.refStorage = "files";
       init.defaultBranch = "main";
       init.defaultRefFormat = "files";
       merge.conflictStyle = "zdiff3";
