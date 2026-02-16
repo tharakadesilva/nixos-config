@@ -5,7 +5,6 @@ _: [
   "discord"
   "docker-desktop"
   "google-chrome"
-  "intellij-idea"
   "ledger-live"
   "nvidia-geforce-now"
   "opencode-desktop"
