@@ -8,6 +8,7 @@ _: [
   "intellij-idea"
   "ledger-live"
   "nvidia-geforce-now"
+  "opencode-desktop"
   "plex"
   "postman"
   "raycast"

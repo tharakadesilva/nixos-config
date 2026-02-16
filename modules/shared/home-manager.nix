@@ -79,6 +79,7 @@ in {
 
       help.autocorrect = "prompt";
       init.defaultBranch = "main";
+      init.defaultRefFormat = "files";
       merge.conflictStyle = "zdiff3";
       pull.rebase = true;
 
@@ -613,8 +614,8 @@ in {
       export PATH=$PATH:$ANDROID_HOME/emulator
       export PATH=$PATH:$ANDROID_HOME/platform-tools
       export PATH=$PATH:$HOME/go/bin
-      export PATH=$PATH:$HOME/.local/bin
       export PATH=$PATH:$HOME/.bun/bin
+      export PATH=$PATH:$HOME/.local/bin
     '';
 
     shellAliases = {
