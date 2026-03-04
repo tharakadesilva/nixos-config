@@ -8,6 +8,12 @@
     ':automergePr',
     ':pinVersions',
   ],
+  "hostRules": [
+    {
+      "matchHost": "github.com",
+      "token": "{{ secrets.GITHUB_TOKEN }}"
+    }
+  ],
   "lockFileMaintenance": {
     "enabled": true,
     "schedule": [
@@ -16,13 +22,5 @@
   },
   nix: {
     enabled: true,
-  },
-  "packageRules": [
-    {
-      "matchPackageNames": [
-        "/github\.com\/tharakadesilva\/nixos-secrets/"
-      ],
-      "enabled": false,
-    }
-  ]
+  }
 }
