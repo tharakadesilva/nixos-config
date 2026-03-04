@@ -16,13 +16,5 @@
   },
   nix: {
     enabled: true,
-  },
-  "packageRules": [
-    {
-      "matchPackageNames": [
-        "/github\.com\/tharakadesilva\/nixos-secrets/"
-      ],
-      "enabled": false,
-    }
-  ]
+  }
 }
