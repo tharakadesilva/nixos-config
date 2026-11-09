@@ -36,6 +36,7 @@ with pkgs; [
   procs
   ripgrep
   rsync
+  rustup
   sd
   supabase-cli
   tmux
