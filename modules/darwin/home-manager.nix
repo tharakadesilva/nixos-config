@@ -36,7 +36,6 @@ in {
       "cocoapods"
       "fastlane"
       "libyaml"
-      "opencode"
       "openssl@3"
       "ruby"
       # End of Expo requirements
