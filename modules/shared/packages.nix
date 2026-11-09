@@ -6,7 +6,6 @@ with pkgs; [
   bazelisk
   bottom
   buildifier
-  bun
   cloc
   corepack_22
   cowsay
