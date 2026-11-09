@@ -38,6 +38,8 @@ curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix 
 
 > **Note**: The build group id `30000` is a temporary workaround until Determinate Systems fixes their installation issues.
 
+> **Note**: This configuration sets `nix.enable = false`, so it doesn't install or configure Nix. Nix settings and garbage collection are left to this installer.
+
 After installation, open a new terminal session to make the `nix` executable available in your `$PATH`. You'll need this in the steps ahead.
 
 ### 5. Copy the NIX SSH keys from USB
@@ -135,6 +137,13 @@ For managed systems where you can't create users, you can use the following comm
 
 ```sh
 sh <(curl -L https://nixos.org/nix/install) --no-daemon
+```
+
+This installer doesn't enable flakes, and this configuration doesn't manage Nix settings (`nix.enable = false`), so enable them yourself:
+
+```sh
+mkdir -p ~/.config/nix
+echo 'experimental-features = nix-command flakes' >> ~/.config/nix/nix.conf
 ```
 
 After installation, open a new terminal session to make the `nix` executable available in your `$PATH`. You'll need this in the steps ahead.
