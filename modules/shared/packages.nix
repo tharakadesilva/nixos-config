@@ -36,7 +36,6 @@ with pkgs; [
   procps
   procs
   ripgrep
-  rm-improved
   rsync
   sd
   supabase-cli

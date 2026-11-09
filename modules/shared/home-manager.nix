@@ -634,7 +634,6 @@ in {
       ls = "eza -la";
       mkdir = "take";
       mv = "rsync-move";
-      rm = "rip";
       ps = "procs";
       top = "btm";
       vi = "nvim";
