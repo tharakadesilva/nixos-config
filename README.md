@@ -164,3 +164,19 @@ nix run .#build-switch
 ```
 
 </details>
+
+## GPG signing key
+
+The private key is decrypted by agenix to `~/.ssh/gpg_github`. The public key, `~/.ssh/gpg_github.pub`, is a read-only Home Manager file generated from `githubPublicSigningKey` in `modules/shared/files.nix`, so don't write to it directly.
+
+To create the public key from the private key, for example after rotating it:
+
+```sh
+# Find the long key ID on the `sec` line
+gpg --show-keys --keyid-format long ~/.ssh/gpg_github
+
+gpg --import ~/.ssh/gpg_github
+gpg --armor --export <KEY_ID>
+```
+
+Paste the output into `githubPublicSigningKey`. If the key ID changed, also update `programs.git` `signing.key` in `modules/shared/home-manager.nix`. Then run `build-switch` again.

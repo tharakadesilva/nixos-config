@@ -110,7 +110,7 @@ in {
     enable = true;
     publicKeys = [
       {
-        source = "/Users/${user}/.ssh/gpg_github";
+        source = "/Users/${user}/.ssh/gpg_github.pub";
         trust = 5;
       }
     ];
