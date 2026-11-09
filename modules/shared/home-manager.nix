@@ -129,33 +129,22 @@ in {
         "/Users/${user}/.ssh/config_external"
       )
     ];
-    matchBlocks = {
+    settings = {
       "*" = {
-        forwardAgent = false;
-        serverAliveInterval = 0;
-        serverAliveCountMax = 3;
-        compression = false;
-        extraOptions = {
-          AddKeysToAgent = "no";
-          HashKnownHosts = "no";
-          UserKnownHostsFile = "~/.ssh/known_hosts";
-          ControlMaster = "no";
-          ControlPath = "~/.ssh/master-%r@%n:%p";
-          ControlPersist = "no";
-        };
+        ForwardAgent = false;
+        ServerAliveInterval = 0;
+        ServerAliveCountMax = 3;
+        Compression = false;
+        AddKeysToAgent = "no";
+        HashKnownHosts = "no";
+        UserKnownHostsFile = "~/.ssh/known_hosts";
+        ControlMaster = "no";
+        ControlPath = "~/.ssh/master-%r@%n:%p";
+        ControlPersist = "no";
       };
       "github.com" = {
-        identitiesOnly = true;
-        identityFile = [
-          (
-            lib.mkIf pkgs.stdenv.hostPlatform.isLinux
-            "/home/${user}/.ssh/id_github"
-          )
-          (
-            lib.mkIf pkgs.stdenv.hostPlatform.isDarwin
-            "/Users/${user}/.ssh/id_github"
-          )
-        ];
+        IdentitiesOnly = true;
+        IdentityFile = "~/.ssh/id_github";
       };
     };
   };

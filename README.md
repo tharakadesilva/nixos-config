@@ -61,7 +61,7 @@ git clone git@github.com:tharakadesilva/nixos-config.git
 ### 7. Build and apply the configuration
 
 ```sh
-nix run .#build-switch
+sudo nix run .#build-switch
 ```
 
 ### Manual Steps

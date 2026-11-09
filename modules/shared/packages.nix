@@ -7,7 +7,7 @@ with pkgs; [
   bottom
   buildifier
   cloc
-  corepack_22
+  corepack
   cowsay
   devenv
   dive
@@ -28,9 +28,9 @@ with pkgs; [
   maven
   neovim
   nixfmt
-  nodejs_22
-  nodePackages.node-gyp
-  nodePackages_latest.eas-cli
+  nodejs_26
+  node-gyp
+  eas-cli
   pre-commit
   procps
   procs
