@@ -18,6 +18,7 @@ with pkgs; [
   eza
   fd
   ffmpeg
+  gh
   git-filter-repo
   graphviz
   gnupg
